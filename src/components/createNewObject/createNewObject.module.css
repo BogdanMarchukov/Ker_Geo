@@ -1,0 +1,35 @@
+.CreateNewObject {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    height: 180px;
+    border: solid 1px black;
+    top: auto;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.CreateNewObject h1{
+    color: black;
+    font-size: 15px;
+}
+
+.CreateNewObject form  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.create {
+    margin-left: 35px;
+    width: 100px;
+    font-size: 15px;
+    background: #27e024;
+    border-radius: 5px;
+}
+
+.censel {
+    margin-left: 60px;
+}

@@ -2,13 +2,17 @@ import React, { Component } from 'react'
 import classes from './Veu.module.css'
 import ObjectButton from '../../components/objectButton/ObjectButton'
 import { connect } from 'react-redux'
+import CreateNewObject from '../../components/CreateNewObject/CreateNewObject'
 
 
 class Veu extends Component {
+ 
+    
+  
 
     render() {
-    
-        console.log(this.props.veu)
+        
+        
         return (
             <div className={classes.Veu}>
                 <h1>Выберите объект или создайте новый</h1>
@@ -20,15 +24,21 @@ class Veu extends Component {
                 <div className={classes.objectList}>
                     {this.props.veu.map((newVeu, index) => {
                         return (
+                            
                             <ObjectButton
                                 name={newVeu.name}
                                 key={index}
 
                             />
+                            
                         )
                     })}
+                   
                 </div>
-
+                <div className={classes.modal}>
+                    <CreateNewObject 
+                    />
+                </div>
             </div>
         )
     }

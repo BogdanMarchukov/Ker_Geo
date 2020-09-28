@@ -1,0 +1,18 @@
+.ObjectButton {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.ObjectButton button {
+   border-radius: 5px;
+   border: none;
+   background: #f59120;
+   margin: 20px 10px;
+
+}
+
+.ObjectButton p {
+   font-size: 30px;
+   color: #fff;
+}

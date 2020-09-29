@@ -1,0 +1,1 @@
+export const CREATE_NEW_OBJECT = "CREATE_NEW_OBJECT"

@@ -6,18 +6,24 @@ import CreateNewObject from '../../components/CreateNewObject/CreateNewObject'
 
 
 class Veu extends Component {
- 
+
+    state = {
+        cls: classes.modal
+    }
+
+
     
-  
 
     render() {
         
-        
+
+
         return (
             <div className={classes.Veu}>
                 <h1>Выберите объект или создайте новый</h1>
                 <button
                     className={classes.btn}
+                    onClick = {this.createWindow}
                 >
                     +
                  </button>
@@ -35,7 +41,7 @@ class Veu extends Component {
                     })}
                    
                 </div>
-                <div className={classes.modal}>
+                <div className={this.state.cls}>
                     <CreateNewObject 
                     />
                 </div>
@@ -45,7 +51,9 @@ class Veu extends Component {
 }
 
 function mapSatteToProps(state) {
-    return  {veu: state.veu}
+    return {
+        veu: state.veu.veu
+    }
   
 }
 

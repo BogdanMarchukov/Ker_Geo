@@ -3,6 +3,7 @@ import classes from './Veu.module.css'
 import ObjectButton from '../../components/objectButton/ObjectButton'
 import { connect } from 'react-redux'
 import CreateNewObject from '../../components/CreateNewObject/CreateNewObject'
+import {CALL_MODEL_WINDOW} from '../../store/actions/actionTypes'
 
 
 class Veu extends Component {
@@ -11,19 +12,17 @@ class Veu extends Component {
         cls: classes.modal
     }
 
-
     
 
     render() {
-        
-
+       
 
         return (
             <div className={classes.Veu}>
                 <h1>Выберите объект или создайте новый</h1>
                 <button
-                    className={classes.btn}
-                    onClick = {this.createWindow}
+                    className={this.props.btn_veu}
+                    onClick = {this.props.omWindowModal}
                 >
                     +
                  </button>
@@ -52,11 +51,18 @@ class Veu extends Component {
 
 function mapSatteToProps(state) {
     return {
-        veu: state.veu.veu
+        veu: state.veu.veu,
+        btn_veu:state.cls.btn
     }
   
 }
 
+function mapDispatchToProps(dispatch){
+    return {
+        omWindowModal: () => dispatch({type: CALL_MODEL_WINDOW })
+    }
+}
 
 
-export default connect(mapSatteToProps) (Veu)
+
+export default connect(mapSatteToProps, mapDispatchToProps) (Veu)

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classes from './CreateNewObject.module.css'
-import { CREATE_NEW_OBJECT } from '../../store/actions/actionTypes'
+import { CREATE_NEW_OBJECT, CLOSE_WINDOW } from '../../store/actions/actionTypes'
+
 
 class CreateNewObject extends Component {
 
@@ -9,24 +10,13 @@ class CreateNewObject extends Component {
         name: "",
         namber: 0,
         disabled: true,
-        cls: classes.background
 
     }
 
-
-    createHandler = () => {
-        console.log('test')
-    }
-
-    censelHandler = () => {
-        console.log("tect2")
-    }
 
     submitHandler = (event) => {
         event.preventDefault()
-        this.setState(
-            {cls:classes.none}
-        )
+        this.props.closeWindow()
     }
 
     HandlerNameObject = event => {
@@ -56,12 +46,12 @@ class CreateNewObject extends Component {
 
 
     render() {
-       
-        
+     
         
 
         return (
-            <div className = {this.state.cls}>
+            
+            <div className = {this.props.none}>
                 <div className={classes.CreateNewObject}>
                     <h1>Создание объекта</h1>
                     <form onSubmit={this.submitHandler}>
@@ -89,6 +79,7 @@ class CreateNewObject extends Component {
                                 Создать
                         </button>
                             <button
+                                onClick={this.props.closeWindow}
                                 className={classes.censel}
                             
                             >
@@ -102,11 +93,19 @@ class CreateNewObject extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        none: state.cls.none
+    }
+}
+
+
 function mapDispatchToProps(dispatch) {
     return {
-        onName: info => dispatch({ type: CREATE_NEW_OBJECT, info })
+        onName: info => dispatch({ type: CREATE_NEW_OBJECT, info }),
+        closeWindow: () => dispatch({type: CLOSE_WINDOW})
     }
 
 }
 
-export default connect(null, mapDispatchToProps)(CreateNewObject)
+export default connect(mapStateToProps, mapDispatchToProps)(CreateNewObject)

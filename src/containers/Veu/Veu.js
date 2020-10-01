@@ -7,16 +7,19 @@ import {CALL_MODEL_WINDOW} from '../../store/actions/actionTypes'
 
 
 
+
 class Veu extends Component {
 
     state = {
         cls: classes.modal
     }
 
+    ClickHandler = () => {
+        
+    }
     
 
     render() {
-       console.log(this.props)
 
         return (
             <div className={classes.Veu}>
@@ -34,12 +37,13 @@ class Veu extends Component {
                             <ObjectButton
                                 name={newVeu.name}
                                 key={index}
+                                namber={newVeu.namber}
+                                oupen={this.ClickHandler}
 
                             />
                             
                         )
                     })}
-                   
                 </div>
                 <div className={this.state.cls}>
                     <CreateNewObject 

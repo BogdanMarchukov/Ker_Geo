@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 
 
+
 class VeuOptions extends Component {
 
     Createlist = (namber) => {
@@ -20,7 +21,7 @@ class VeuOptions extends Component {
                 <div className={classes.Content}>
                     <h1>Список ВЭУ</h1>
                     <ul>
-                        {this.Createlist(10)}
+                        {this.Createlist(this.props.veuItems)}
                     </ul>
                 </div>
             </div>
@@ -28,6 +29,11 @@ class VeuOptions extends Component {
     }
 }
 
+function mapStateToProps(state) {
+   
+    return {
+        veuItems: state.imemVeu.activObject
+    }
+}
 
-
-export default VeuOptions
+export default connect(mapStateToProps)(VeuOptions)

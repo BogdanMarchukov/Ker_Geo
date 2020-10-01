@@ -1,8 +1,10 @@
 
 const initialState = {
  veu: [
-   {name: "Черный яр", namber: "12"}
+  
+   
  ]
+
 }
 
 

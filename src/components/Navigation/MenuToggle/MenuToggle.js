@@ -3,7 +3,7 @@ import classes from './MenuToggle.module.css'
 
 const MenuToggle = props => {
 
-    console.log()
+   
     const cls = [
         classes.MenuToggle,
         'fa'

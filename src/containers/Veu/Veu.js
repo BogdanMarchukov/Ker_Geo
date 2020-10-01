@@ -6,6 +6,7 @@ import CreateNewObject from '../../components/CreateNewObject/CreateNewObject'
 import {CALL_MODEL_WINDOW} from '../../store/actions/actionTypes'
 
 
+
 class Veu extends Component {
 
     state = {
@@ -15,7 +16,7 @@ class Veu extends Component {
     
 
     render() {
-       
+       console.log(this.props)
 
         return (
             <div className={classes.Veu}>

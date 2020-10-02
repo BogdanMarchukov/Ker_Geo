@@ -37,6 +37,15 @@ class Drawer extends Component {
                             Options
                             </NavLink>
                         </li>
+                        <li>
+                        <NavLink
+                        to="parametrse"
+                        activeClassName = {classes.active}
+                        onClick = {this.clickHandler}
+                        >
+                            ParametersVeu
+                            </NavLink>
+                        </li>
                     </ul>           
                 </nav>
                { this.props.isOnen ? <Backdrop onClick={this.props.onClose}/> : null} 

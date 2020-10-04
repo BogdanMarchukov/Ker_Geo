@@ -2,3 +2,4 @@ export const CREATE_NEW_OBJECT = "CREATE_NEW_OBJECT"
 export const CALL_MODEL_WINDOW = 'CALL_MODEL_WINDOW'
 export const CLOSE_WINDOW = 'CLOSE_WINDOW'
 export const OPEN_OBJECT = 'OPEN_OBJECT'
+export const OPEN_INDEX = 'OPEN_INDEX'

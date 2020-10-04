@@ -10,6 +10,7 @@ class CreateNewObject extends Component {
         name: "",
         namber: 0,
         disabled: true,
+        id: 0
 
     }
 
@@ -21,7 +22,7 @@ class CreateNewObject extends Component {
 
     HandlerNameObject = event => {
         this.setState(
-            { name: event.target.value }
+            { name: event.target.value, id: Math.random() }
         )
 
     }

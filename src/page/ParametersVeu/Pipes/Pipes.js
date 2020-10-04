@@ -4,23 +4,17 @@ import classes from './Pipes.module.css'
 const Pipes = props => {
     return (
         <div className={classes.Pipes}>
-           <h1>Отметки труб</h1>
-           <table border="1" width="100%" >
-               <tr>
-                   <th>6-Труб</th>
-                   <th></th>
-               </tr>
-               <tr>
-                   <th>160-ая</th>
-                   <th></th>
-               </tr>
-               <tr>
-                   <th>200-ая</th>
-                   <th></th>
-               </tr>
-              
-           </table>
-           <button>Задать "0"</button>
+            <h1>Отметки труб</h1>
+            <div className={classes.stringTable}>
+                <p>6-труб:</p>
+            </div>
+            <div className={classes.stringTable}>
+                <p>160-ая:</p>
+            </div>
+            <div className={classes.stringTable}>
+                <p>200-ая:</p>
+            </div>
+            <button>Задать "0"</button>
         </div>
     );
 }

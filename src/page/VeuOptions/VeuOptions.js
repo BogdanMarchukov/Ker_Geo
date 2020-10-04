@@ -16,10 +16,11 @@ class VeuOptions extends Component {
     }
 
     render() {
+        
         return (
             <div className = {classes.VeuOptions}>
                 <div className={classes.Content}>
-                    <h1>Список ВЭУ</h1>
+                    <h1>{this.props.name}</h1>
                     <ul>
                         {this.Createlist(this.props.veuItems)}
                     </ul>
@@ -30,9 +31,10 @@ class VeuOptions extends Component {
 }
 
 function mapStateToProps(state) {
-   
+   console.log(state)
     return {
-        veuItems: state.imemVeu.activObject
+        veuItems: state.imemVeu.activObject,
+        name: state.imemVeu.name
     }
 }
 

@@ -14,13 +14,9 @@ class Veu extends Component {
         cls: classes.modal
     }
 
-    ClickHandler = () => {
-        
-    }
-    
+
 
     render() {
-
         return (
             <div className={classes.Veu}>
                 <h1>Выберите объект или создайте новый</h1>
@@ -38,7 +34,7 @@ class Veu extends Component {
                                 name={newVeu.name}
                                 key={index}
                                 namber={newVeu.namber}
-                                oupen={this.ClickHandler}
+                                index={index}
 
                             />
                             

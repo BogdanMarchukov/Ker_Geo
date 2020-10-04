@@ -15,7 +15,10 @@ const ObjectButton = props => {
                 <NavLink to="veu-options">
                     <button 
                     onClick={()=> {
-                        props.totallItem(props.namber)}
+                        props.totallItem(props)
+                       
+                        }
+                        
                     }
                     
                     >

@@ -10,7 +10,7 @@ class VeuOptions extends Component {
     Createlist = (namber) => {
         let item = [];
         for (let i = 0; i < namber; i++) {
-        item.push(<VeuButton indexVeu={i} name= {i+1} />)
+        item.push(<VeuButton key={i} indexVeu={i} name= {i+1} />)
         }
         return item
     }

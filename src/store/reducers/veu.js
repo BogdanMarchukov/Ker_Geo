@@ -1,7 +1,7 @@
 
 const initialState = {
  veu: [
-    {name: "Черный яр", namber: "15", disabled: false, id:1},
+    {name: "Черный яр", namber: "15", disabled: false, id:1, veu1:{name:1}},
     {name: "Котово", namber: "25", disabled: false, id:2},
     {name: "Гуково", namber: "21", disabled: false, id:3}
    
@@ -11,7 +11,6 @@ const initialState = {
 
 
 export default function veuReducer(state = initialState, action) {
-    
     let item = action.info
     let sum = []
    if (item !== undefined) {

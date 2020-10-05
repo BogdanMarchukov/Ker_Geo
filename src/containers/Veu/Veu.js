@@ -35,7 +35,6 @@ class Veu extends Component {
                                 key={index}
                                 namber={newVeu.namber}
                                 index={index}
-
                             />
                             
                         )

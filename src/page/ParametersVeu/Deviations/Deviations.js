@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import classes from './Deviations.module.css'
 
-export default class Deviations extends Component {
+class Deviations extends Component {
 
     state = {
         cls1: classes.none,
@@ -65,109 +66,7 @@ export default class Deviations extends Component {
         )
     }
 
-    handlerBottomSupporting = event => {
-        this.setState(
-            {
-                bottomSupporting: event.target.value
-            }
-        )
-    }
-
-    handlerBottomTemplate = event => {
-        this.setState(
-            {
-                bottomTemplate: event.target.value
-            }
-        )
-    }
-
-    handlerBottomAnchor = event => {
-        this.setState(
-            {
-                bottomAnchor: event.target.value
-            }
-        )
-    }
-
-    handlerBottomUzer = event => {
-        this.setState(
-            {
-                bottomUzer: event.target.value
-            }
-        )
-    }
-
-    handlerBottomDate = event => {
-        this.setState(
-            {
-                bottomDate: event.target.value
-            }
-        )
-    }
-
-    handlerStartTemplate = event => {
-        this.setState(
-            {
-                startTemplate: event.target.value
-            }
-        )
-    }
-
-    handlerStartAnchor = event => {
-        this.setState(
-            {
-                startAnchor: event.target.value
-            }
-        )
-    }
-
-    handlerStartUzer = event => {
-        this.setState(
-            {
-                startUzer: event.target.value
-            }
-        )
-    }
-
-    handlerStartDate = event => {
-        this.setState(
-            {
-                startDate: event.target.value
-            }
-        )
-    }
-
-    handlerConcreteTemplate = event => {
-        this.setState(
-            {
-                concreteTemplate: event.target.value
-            }
-        )
-    }
-
-    handlerConcreteAnchor = event => {
-        this.setState(
-            {
-                concreteAnchor: event.target.value
-            }
-        )
-    }
-
-    handlerConcreteUzer = event => {
-        this.setState(
-            {
-                concreteUzer: event.target.value
-            }
-        )
-    }
-
-    handlerConcreteDate = event => {
-        this.setState(
-            {
-                concreteDate: event.target.value
-            }
-        )
-    }
+    
 
     render() {
         return (
@@ -189,11 +88,11 @@ export default class Deviations extends Component {
                     <p>Дата:</p>
                 </div>
                 <div className={this.state.cls1}>
-                    <input onChange={this.state.handlerBottomSupporting} placeholder="Опорный флянец" />
-                    <input onChange={this.state.handlerBottomTemplate} placeholder="Шаблонный флянец" />
-                    <input onChange={this.state.handlerBottomAnchor} placeholder="Анкер" />
-                    <input onChange={this.state.handlerBottomUzer} placeholder="Исполнитель" />
-                    <input onChange={this.state.handlerBottomDate} placeholder="Дата" />
+                    <input onChange={this.handlerBottomSupporting} placeholder="Опорный флянец" />
+                    <input onChange={this.handlerBottomTemplate} placeholder="Шаблонный флянец" />
+                    <input onChange={this.handlerBottomAnchor} placeholder="Анкер" />
+                    <input onChange={this.handlerBottomUzer} placeholder="Исполнитель" />
+                    <input onChange={this.handlerBottomDate} placeholder="Дата" />
                 </div>
                 <button
                     className={this.state.btnSave}
@@ -272,3 +171,18 @@ export default class Deviations extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+   console.log(state)
+    return{
+        state
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (Deviations)

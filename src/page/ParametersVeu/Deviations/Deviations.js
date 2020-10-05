@@ -22,24 +22,8 @@ class Deviations extends Component {
         btnSave2: classes.none,
         cls3: classes.none,
         btnWrite3: "",
-        btnSave3: classes.none,
-        bottomSupporting: "",
-        bottomTemplate: "",
-        bottomAnchor: "",
-        bottomUzer: "",
-        bottomDate: "",
-        bottomDisabled: false,
-        startTemplate: "",
-        startAnchor: "",
-        startUzer: "",
-        startDate: "",
-        startDisabled: false,
-        concreteTemplate: "",
-        concreteAnchor: "",
-        concreteUzer: "",
-        concreteDate: "",
-        concreteDisabled: false
-
+        btnSave3: classes.none
+        
     }
 
     showInputBottom = () => {
@@ -97,11 +81,31 @@ class Deviations extends Component {
                     <p>Дата:</p>
                 </div>
                 <div className={this.state.cls1}>
-                    <input onChange={this.handlerBottomSupporting} placeholder="Опорный флянец" />
-                    <input onChange={this.handlerBottomTemplate} placeholder="Шаблонный флянец" />
-                    <input onChange={this.handlerBottomAnchor} placeholder="Анкер" />
-                    <input onChange={this.handlerBottomUzer} placeholder="Исполнитель" />
-                    <input onChange={this.handlerBottomDate} placeholder="Дата" />
+                    <input onChange={(event)=>{
+                        let a = event.target.value,
+                        b = this.props.indexObject,
+                        c = this.props.indexVeu;
+                        this.props.handlerBottomSupporting(a, b, c)}} placeholder="Опорный флянец" />
+                    <input onChange={(event)=>{
+                        let a = event.target.value,
+                        b = this.props.indexObject,
+                        c = this.props.indexVeu;
+                        this.props.handlerBottomTemplate(a, b, c)}} placeholder="Шаблонный флянец" />
+                    <input onChange={(event)=>{
+                        let a = event.target.value,
+                        b = this.props.indexObject,
+                        c = this.props.indexVeu;
+                        this.props.handlerBottomAnchor(a, b, c)}} placeholder="Анкер" />
+                    <input onChange={(event)=>{
+                        let a = event.target.value,
+                        b = this.props.indexObject,
+                        c = this.props.indexVeu;
+                        this.props.handlerBottomUzer(a, b, c)}} placeholder="Исполнитель" />
+                    <input onChange={(event)=>{
+                        let a = event.target.value,
+                        b = this.props.indexObject,
+                        c = this.props.indexVeu;
+                        this.props.handlerBottomDate(a, b, c)}} placeholder="Дата" />
                 </div>
                 <button
                     className={this.state.btnSave}
@@ -129,10 +133,26 @@ class Deviations extends Component {
                 </div>
 
                 <div className={this.state.cls2}>
-                    <input onChange={this.state.handlerStartTemplate} placeholder="Шаблонный флянец" />
-                    <input onChange={this.state.handlerStartAnchor} placeholder="Анкер" />
-                    <input onChange={this.state.handlerStartUzer} placeholder="Исполнитель" />
-                    <input onChange={this.state.handlerStartDate} placeholder="Дата" />
+                    <input onChange={(event)=>{
+                        let a = event.target.value,
+                        b = this.props.indexObject,
+                        c = this.props.indexVeu;
+                        this.props.handlerStartTemplate(a, b, c)}} placeholder="Шаблонный флянец" />
+                    <input onChange={(event)=>{
+                        let a = event.target.value,
+                        b = this.props.indexObject,
+                        c = this.props.indexVeu;
+                        this.props.handlerStartAnchor(a, b, c)}} placeholder="Анкер" />
+                    <input onChange={(event)=>{
+                        let a = event.target.value,
+                        b = this.props.indexObject,
+                        c = this.props.indexVeu;
+                        this.props.handlerStartUzer(a, b, c)}} placeholder="Исполнитель" />
+                    <input onChange={(event)=>{
+                        let a = event.target.value,
+                        b = this.props.indexObject,
+                        c = this.props.indexVeu;
+                        this.props.handlerStartDate(a, b, c)}} placeholder="Дата" />
                 </div>
                 <button
                     className={this.state.btnSave2}
@@ -159,10 +179,26 @@ class Deviations extends Component {
                     <p>Дата:</p>
                 </div>
                 <div className={this.state.cls3}>
-                    <input onChange={this.state.handlerConcreteTemplate} placeholder="Шаблонный флянец" />
-                    <input onChange={this.state.handlerConcreteAnchor} placeholder="Анкер" />
-                    <input onChange={this.state.handlerConcreteUzer} placeholder="Исполнитель" />
-                    <input onChange={this.state.handlerConcreteDate} placeholder="Дата" />
+                    <input onChange={(event)=>{
+                        let a = event.target.value,
+                        b = this.props.indexObject,
+                        c = this.props.indexVeu;
+                        this.props.handlerConcreteTemplate(a, b, c)}} placeholder="Шаблонный флянец" />
+                    <input onChange={(event)=>{
+                        let a = event.target.value,
+                        b = this.props.indexObject,
+                        c = this.props.indexVeu;
+                        this.props.handlerConcreteAnchor(a, b, c)}} placeholder="Анкер" />
+                    <input onChange={(event)=>{
+                        let a = event.target.value,
+                        b = this.props.indexObject,
+                        c = this.props.indexVeu;
+                        this.props.handlerConcreteUzer(a, b, c)}} placeholder="Исполнитель" />
+                    <input onChange={(event)=>{
+                        let a = event.target.value,
+                        b = this.props.indexObject,
+                        c = this.props.indexVeu;
+                        this.props.handlerConcreteDate(a, b, c)}} placeholder="Дата" />
                 </div>
                 <button
                     className={this.state.btnSave3}
@@ -182,29 +218,94 @@ class Deviations extends Component {
 }
 
 function mapStateToProps(state) {
-   console.log(state)
     return{
-        state
+        indexObject: state.imemVeu.activIndex,
+        indexVeu: state.imemVeu.activIndexVeu
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        handlerBottomSupporting: () => dispatch({type:  ADD_BOTTOM_SUPPORTING}),
-        handlerBottomTemplate: () => dispatch({type:  ADD_BOTTOM_TEMPLATE}),
-        handlerBottomAnchor: () => dispatch({type:  ADD_BOTTOM_ANCHOR}),
-        handlerBottomUzer: () => dispatch({type:  ADD_BOTTOM_UZER}),
-        handlerBottomDate: () => dispatch({type:  ADD_BOTTOM_DATE}),
+        handlerBottomSupporting: (value, indexObject, indexVeu) => dispatch({
+            type:  ADD_BOTTOM_SUPPORTING,
+            value,
+            indexObject,
+            indexVeu
+        }),
+        handlerBottomTemplate: (value, indexObject, indexVeu) => dispatch({
+            type:  ADD_BOTTOM_TEMPLATE,
+            value,
+            indexObject,
+            indexVeu
+        }),
+        handlerBottomAnchor: (value, indexObject, indexVeu) => dispatch({
+            type:  ADD_BOTTOM_ANCHOR,
+            value,
+            indexObject,
+            indexVeu
+        }),
+        handlerBottomUzer: (value, indexObject, indexVeu) => dispatch({
+            type:  ADD_BOTTOM_UZER,
+            value,
+            indexObject,
+            indexVeu
+        }),
+        handlerBottomDate: (value, indexObject, indexVeu) => dispatch({
+            type:  ADD_BOTTOM_DATE,
+            value,
+            indexObject,
+            indexVeu
+        }),
 
-        handlerStartTemplate: () => dispatch({type:  ADD_START_TEMPLATE}),
-        handlerStartAnchor: () => dispatch({type:  ADD_START_ANCHOR}),
-        handlerStartUzer: () => dispatch({type:  ADD_START_UZER}),
-        handlerStartDate: () => dispatch({type:  ADD_START_DATE}),
+        handlerStartTemplate: (value, indexObject, indexVeu) => dispatch({
+            type:  ADD_START_TEMPLATE,
+            value,
+            indexObject,
+            indexVeu
+        }),
+        handlerStartAnchor: (value, indexObject, indexVeu) => dispatch({
+            type:  ADD_START_ANCHOR,
+            value,
+            indexObject,
+            indexVeu
+        }),
+        handlerStartUzer: (value, indexObject, indexVeu) => dispatch({
+            type:  ADD_START_UZER,
+            value,
+            indexObject,
+            indexVeu
+        }),
+        handlerStartDate: (value, indexObject, indexVeu) => dispatch({
+            type:  ADD_START_DATE,
+            value,
+            indexObject,
+            indexVeu
+        }),
 
-        handlerConcreteTemplate: () => dispatch({type:  ADD_CONCRETE_TEMPLATE}),
-        handlerConcreteAnchor: () => dispatch({type:  ADD_CONCRETE_ANCHOR}),
-        handlerConcreteUzer: () => dispatch({type:  ADD_CONCRETE_UZER}),
-        handlerConcreteDate: () => dispatch({type:  ADD_CONCRETE_DATE})
+        handlerConcreteTemplate: (value, indexObject, indexVeu) => dispatch({
+            type:  ADD_CONCRETE_TEMPLATE,
+            value,
+            indexObject,
+            indexVeu
+        }),
+        handlerConcreteAnchor: (value, indexObject, indexVeu) => dispatch({
+            type:  ADD_CONCRETE_ANCHOR,
+            value,
+            indexObject,
+            indexVeu
+        }),
+        handlerConcreteUzer: (value, indexObject, indexVeu) => dispatch({
+            type:  ADD_CONCRETE_UZER,
+            value,
+            indexObject,
+            indexVeu
+        }),
+        handlerConcreteDate: (value, indexObject, indexVeu) => dispatch({
+            type:  ADD_CONCRETE_DATE,
+            value,
+            indexObject,
+            indexVeu
+        })
     }
 }
 

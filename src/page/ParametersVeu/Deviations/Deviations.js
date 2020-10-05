@@ -1,6 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classes from './Deviations.module.css'
+import {
+    ADD_BOTTOM_SUPPORTING, ADD_BOTTOM_TEMPLATE,
+    ADD_BOTTOM_ANCHOR, ADD_BOTTOM_UZER,
+    ADD_BOTTOM_DATE, ADD_START_TEMPLATE,
+    ADD_START_ANCHOR, ADD_START_UZER,
+    ADD_START_DATE, ADD_CONCRETE_TEMPLATE,
+    ADD_CONCRETE_ANCHOR, ADD_CONCRETE_UZER,
+    ADD_CONCRETE_DATE
+} from '../../../store/actions/actionTypes'
 
 class Deviations extends Component {
 
@@ -181,7 +190,21 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
+        handlerBottomSupporting: () => dispatch({type:  ADD_BOTTOM_SUPPORTING}),
+        handlerBottomTemplate: () => dispatch({type:  ADD_BOTTOM_TEMPLATE}),
+        handlerBottomAnchor: () => dispatch({type:  ADD_BOTTOM_ANCHOR}),
+        handlerBottomUzer: () => dispatch({type:  ADD_BOTTOM_UZER}),
+        handlerBottomDate: () => dispatch({type:  ADD_BOTTOM_DATE}),
 
+        handlerStartTemplate: () => dispatch({type:  ADD_START_TEMPLATE}),
+        handlerStartAnchor: () => dispatch({type:  ADD_START_ANCHOR}),
+        handlerStartUzer: () => dispatch({type:  ADD_START_UZER}),
+        handlerStartDate: () => dispatch({type:  ADD_START_DATE}),
+
+        handlerConcreteTemplate: () => dispatch({type:  ADD_CONCRETE_TEMPLATE}),
+        handlerConcreteAnchor: () => dispatch({type:  ADD_CONCRETE_ANCHOR}),
+        handlerConcreteUzer: () => dispatch({type:  ADD_CONCRETE_UZER}),
+        handlerConcreteDate: () => dispatch({type:  ADD_CONCRETE_DATE})
     }
 }
 

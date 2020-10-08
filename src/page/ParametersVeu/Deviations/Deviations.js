@@ -250,29 +250,175 @@ class Deviations extends Component {
             }
         )
         this.saveConcreteControl()
+       
     }
 
+    // Отображает данные из stora в таблицу Корзина низ
 
+    showBottomSupporting = (nV, nObj) => {
+        const namberVeu = ["nV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+           return (this.props.veu.veu[nObj].[namberVeu].oF)
+        }
+    }
+
+    showBottomTemplate = (nV, nObj) => {
+        const namberVeu = ["nV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+           return (this.props.veu.veu[nObj].[namberVeu].shF)
+        }
+    }
+
+    showBottomAnchor = (nV, nObj) => {
+        const namberVeu = ["nV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+           return (this.props.veu.veu[nObj].[namberVeu].anchor)
+        }
+    }
+
+    showBottomUzer = (nV, nObj) => {
+        const namberVeu = ["nV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+           return (this.props.veu.veu[nObj].[namberVeu].uzer)
+        }
+    }
+
+    showBottomDate = (nV, nObj) => {
+        const namberVeu = ["nV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+           return (this.props.veu.veu[nObj].[namberVeu].date)
+           
+        }
+    }
+    showStartTemplate = (nV, nObj) => {
+        const namberVeu = ["sV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+           return (this.props.veu.veu[nObj].[namberVeu].shF)
+        }
+    }
+
+    showStartAnchor = (nV, nObj) => {
+        const namberVeu = ["sV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+           return (this.props.veu.veu[nObj].[namberVeu].anchor)
+        }
+    }
+
+    showStartUzer = (nV, nObj) => {
+        const namberVeu = ["sV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+           return (this.props.veu.veu[nObj].[namberVeu].uzer)
+        }
+    }
+
+    showStartDate = (nV, nObj) => {
+        const namberVeu = ["sV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+           return (this.props.veu.veu[nObj].[namberVeu].date)
+           
+        }
+    }
+
+    showConcreteTemplate = (nV, nObj) => {
+        const namberVeu = ["finV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+           return (this.props.veu.veu[nObj].[namberVeu].shF)
+        }
+    }
+
+    showConcreteAnchor = (nV, nObj) => {
+        const namberVeu = ["finV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+           return (this.props.veu.veu[nObj].[namberVeu].anchor)
+        }
+    }
+
+    showConcreteUzer = (nV, nObj) => {
+        const namberVeu = ["finV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+           return (this.props.veu.veu[nObj].[namberVeu].uzer)
+        }
+    }
+
+    showConcreteDate = (nV, nObj) => {
+        const namberVeu = ["finV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+           return (this.props.veu.veu[nObj].[namberVeu].date)
+           
+        }
+    }
+            //// Защита данных таблицы от перезаписи
+    noRecordingBottom = (nV, nObj) => {
+        const namberVeu = ["nV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined){
+            return true
+        }else return false
+        
+    }
+
+    noRecordingStart = (nV, nObj) => {
+        const namberVeu = ["sV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined){
+            return true
+        }else return false
+        
+    }
+
+    noRecordingConcrete = (nV, nObj) => {
+        const namberVeu = ["finV" + (nV +1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined){
+            return true
+        }else return false
+        
+    }
+    
+    
 
     render() {
-       
+        console.log(this.props)
+      
         return (
             <div className={classes.Deviations}>
                 <h1>Корзина(Низ)</h1>
                 <div className={classes.stringTable}>
-                    <p>Опорный флянец:</p>
+                    <p>
+                        Опорный флянец: 
+                        <strong>
+                            {this.showBottomSupporting(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
                 </div>
                 <div className={classes.stringTable}>
-                    <p>Шаблонный флянец:</p>
+                    <p>
+                        Шаблонный флянец:
+                        <strong>
+                            {this.showBottomTemplate(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
                 </div>
                 <div className={classes.stringTable}>
-                    <p>Анкер:</p>
+                    <p>
+                        Анкер:
+                        <strong>
+                            {this.showBottomAnchor(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
                 </div>
                 <div className={classes.stringTable}>
-                    <p>Исполнитель:</p>
+                    <p>
+                        Исполнитель:
+                        <strong>
+                            {this.showBottomUzer(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
                 </div>
                 <div className={classes.stringTable}>
-                    <p>Дата:</p>
+                    <p>
+                        Дата:
+                        <strong>
+                            {this.showBottomDate(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
                 </div>
                 <div className={this.state.cls1}>
                     <input onChange={this.handlerBottomSupporting} placeholder="Опорный флянец" />
@@ -293,21 +439,42 @@ class Deviations extends Component {
                 <button
                     onClick={this.showInputBottom}
                     className={this.state.btnWrite1}
+                    disabled= {this.noRecordingBottom(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                 >
                     Вписать
                 </button>
                 <h1>До Бетона</h1>
                 <div className={classes.stringTable}>
-                    <p>Шаблонный флянец:</p>
+                    <p>
+                        Шаблонный флянец:
+                        <strong>
+                            {this.showStartTemplate(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
                 </div>
                 <div className={classes.stringTable}>
-                    <p>Анкер:</p>
+                    <p>
+                        Анкер:
+                        <strong>
+                            {this.showStartAnchor(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
                 </div>
                 <div className={classes.stringTable}>
-                    <p>Исполнитель:</p>
+                    <p>
+                        Исполнитель:
+                        <strong>
+                            {this.showStartUzer(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
                 </div>
                 <div className={classes.stringTable}>
-                    <p>Дата:</p>
+                    <p>
+                        Дата:
+                        <strong>
+                            {this.showStartDate(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
                 </div>
 
                 <div className={this.state.cls2}>
@@ -328,21 +495,43 @@ class Deviations extends Component {
                 <button
                     onClick={this.showInputBottom2}
                     className={this.state.btnWrite2}
+                    disabled= {this.noRecordingStart(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                 >
                     Вписать
                 </button>
                 <h1>Бетонирование</h1>
                 <div className={classes.stringTable}>
-                    <p>Шаблонный флянец:</p>
+                    <p>
+                        Шаблонный флянец:
+                        <strong>
+                            {this.showConcreteTemplate(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
                 </div>
                 <div className={classes.stringTable}>
-                    <p>Анкер:</p>
+                    <p>
+                        Анкер:
+                        <strong>
+                            {this.showConcreteAnchor(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
                 </div>
                 <div className={classes.stringTable}>
-                    <p>Исполнитель:</p>
+                    <p>
+                        Исполнитель:
+                        <strong>
+                            {this.showConcreteUzer(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    
+                    </p>
                 </div>
                 <div className={classes.stringTable}>
-                    <p>Дата:</p>
+                    <p>
+                        Дата:
+                        <strong>
+                            {this.showConcreteDate(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
                 </div>
                 <div className={this.state.cls3}>
                     <input onChange={this.handlerConcreteTemplate} placeholder="Шаблонный флянец" />
@@ -362,6 +551,7 @@ class Deviations extends Component {
                 <button
                     onClick={this.showInputBottom3}
                     className={this.state.btnWrite3}
+                    disabled= {this.noRecordingConcrete(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                 >
                     Вписать
                 </button>
@@ -372,18 +562,11 @@ class Deviations extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state)
-    // let b = 1
-    // let a = "veuBottom"+[b] 
-    
-    // let nameObjc = state.veu.[state.imemVeu.name];
-    // if(nameObjc !== undefined) {
-    //     console.log(nameObjc[a])
-    // }
-        // console.log(state.imemVeu.name)
-        
+            
     return {
-        activ: state.imemVeu
+        activ: state.imemVeu,
+        veu: state.veu
+
     }
 }
 

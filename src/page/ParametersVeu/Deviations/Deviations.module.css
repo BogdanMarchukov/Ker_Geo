@@ -51,4 +51,9 @@
     font-size: 18px;
     text-align: center;
 }
+
+.stringTable p strong {
+    color: #63f24e;
+    margin-left: 10px;
+}
  

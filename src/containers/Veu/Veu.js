@@ -17,6 +17,7 @@ class Veu extends Component {
 
 
     render() {
+ 
         return (
             <div className={classes.Veu}>
                 <h1>Выберите объект или создайте новый</h1>
@@ -50,6 +51,7 @@ class Veu extends Component {
 }
 
 function mapSatteToProps(state) {
+    
     return {
         veu: state.veu.veu,
         btn_veu:state.cls.btn

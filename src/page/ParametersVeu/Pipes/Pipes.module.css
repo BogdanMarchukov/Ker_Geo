@@ -37,4 +37,25 @@
     text-align: center;
 }
 
+.show {
+    display: flex;
+    flex-direction: column;
+   
+    
+}
+.show input {
+    margin-top: 5px;
+    margin-left: 60px;
+    width: 200px;
+}
+
+.none { 
+    display: none;
+}
+
+.stringTable p strong {
+    color: #63f24e;
+    margin-left: 10px;
+}
+
  

@@ -13,7 +13,7 @@ const initialState = {
 
 
 export default function veuReducer(state = initialState, action) {
-    // console.log(action)
+    
     let item = action.info
     let sum = []
     if (item !== undefined) {
@@ -57,6 +57,15 @@ export default function veuReducer(state = initialState, action) {
                     anchor: action.infoVeu.concreteAnchor,
                     uzer: action.infoVeu.concreteUzer,
                     date: action.infoVeu.concreteDate
+                }
+            }
+        case 'SAVE_X_Y_H_TO_STORE':
+            return {
+                veu: state.veu,
+                ...state.veu[action.activ.activIndex].['XYH' + (action.activ.activIndexVeu + 1)] = {
+                    x: action.info.x,
+                    y: action.info.y,
+                    h: action.info.h
                 }
             }
 

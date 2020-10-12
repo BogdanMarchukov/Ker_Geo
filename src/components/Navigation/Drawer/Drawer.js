@@ -25,25 +25,7 @@ class Drawer extends Component {
                             activeClassName = {classes.active}
                             onClick = {this.clickHandler}
                         >
-                            Veu
-                            </NavLink>
-                        </li>
-                        <li>
-                        <NavLink
-                        to="veu-options"
-                        activeClassName = {classes.active}
-                        onClick = {this.clickHandler}
-                        >
-                            Options
-                            </NavLink>
-                        </li>
-                        <li>
-                        <NavLink
-                        to="parametrse"
-                        activeClassName = {classes.active}
-                        onClick = {this.clickHandler}
-                        >
-                            ParametersVeu
+                            Главная
                             </NavLink>
                         </li>
                     </ul>           

@@ -12,6 +12,7 @@ class Veu extends Component {
 
     state = {
         cls: classes.modal
+        
     }
 
 
@@ -45,6 +46,7 @@ class Veu extends Component {
                     <CreateNewObject 
                     />
                 </div>
+              
             </div>
         )
     }

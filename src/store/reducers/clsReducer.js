@@ -1,7 +1,8 @@
 
 const initialState = {
     none : 'none',
-    btn : 'btn_veu'
+    btn : 'btn_veu',
+    btnObj: 'none'
 }
 
 export default function clsReducer (state = initialState, action) {

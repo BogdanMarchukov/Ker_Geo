@@ -2,31 +2,27 @@
 
 const initialState = {
     veu: [
-        { name: "Черный яр", namber: "15", disabled: false, id: 1 },
-        { name: "Котово", namber: "25", disabled: false, id: 2 },
-        { name: "Гуково", namber: "21", disabled: false, id: 3 }
 
-    ]
-
-
+    ],
+    loading: true
 }
 
 
 export default function veuReducer(state = initialState, action) {
-    
-    let item = action.info
-    let sum = []
-    if (item !== undefined) {
-        sum = [item]
-        state.veu.map((element) => {
-
-            sum.push(element)
-        })
-    }
+   
     switch (action.type) {
-        case 'CREATE_NEW_OBJECT':
+        case 'INIT_STATE':
+
             return {
-                veu: sum
+                veu: action.info
+                
+            }
+    
+        case 'CREATE_NEW_OBJECT':
+
+            return {
+
+                veu: [...state.veu, action.info]
             }
         case 'SAVE_TO_STORE_BOTTOM':
             return {

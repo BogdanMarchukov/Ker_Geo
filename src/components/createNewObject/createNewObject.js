@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classes from './CreateNewObject.module.css'
-import { CREATE_NEW_OBJECT, CLOSE_WINDOW } from '../../store/actions/actionTypes'
+import {  CLOSE_WINDOW } from '../../store/actions/actionTypes'
+import { addNewObject } from '../../store/actions/createNewObject'
+import Axios from 'axios'
 
 
 class CreateNewObject extends Component {
@@ -44,12 +46,19 @@ class CreateNewObject extends Component {
 
     }
 
+    onSave = async state => {
+        try {
+            const response = await Axios.post('https://geo-ker.firebaseio.com/veu.json', state)
+            console.log(response.data)
+        } catch (e) {
+            console.log(e)
+        }
+        
+    }
+
 
 
     render() {
-     
-        
-
         return (
             
             <div className = {this.props.none}>
@@ -72,7 +81,8 @@ class CreateNewObject extends Component {
                             <button
                                 className={classes.create}
                                 onClick={ () => { 
-                                    this.props.onName(this.state) 
+                                
+                                    this.props.onName(this.state, this.onSave(this.state)) 
                                 }}
                                 disabled={this.state.disabled}
                                
@@ -95,15 +105,17 @@ class CreateNewObject extends Component {
 }
 
 function mapStateToProps(state) {
+    
     return {
-        none: state.cls.none
+        none: state.cls.none,
+        state: state
     }
 }
 
 
 function mapDispatchToProps(dispatch) {
     return {
-        onName: info => dispatch({ type: CREATE_NEW_OBJECT, info }),
+        onName: info => dispatch(addNewObject(info)),
         closeWindow: () => dispatch({type: CLOSE_WINDOW})
     }
 

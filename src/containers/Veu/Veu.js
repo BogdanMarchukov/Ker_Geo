@@ -3,7 +3,7 @@ import classes from './Veu.module.css'
 import ObjectButton from '../../components/objectButton/ObjectButton'
 import { connect } from 'react-redux'
 import CreateNewObject from '../../components/CreateNewObject/CreateNewObject'
-import { CALL_MODEL_WINDOW, INIT_STATE } from '../../store/actions/actionTypes'
+import { CALL_MODEL_WINDOW, INIT_STATE, KEY_BASE_TO_STORE} from '../../store/actions/actionTypes'
 import Axios from 'axios'
 import Loader from '../../components/Loader/Loader'
 
@@ -21,14 +21,18 @@ class Veu extends Component {
 
 
 
+
     async componentDidMount() {
         try {
             const response = await Axios.get('https://geo-ker.firebaseio.com/veu.json')
             const veuBase = []
+           
             this.props.initState(veuBase)
+           
             Object.keys(response.data).forEach((key) => {
                 veuBase.push(response.data.[key])
-
+                this.props.keyBaseToStore(key)
+                
             })
         } catch (e) {
             console.log(e)
@@ -59,7 +63,6 @@ passwordHandler = () =>{
 
 
     render() {
-        console.log(this.props.veu)
         return (
             <div className={classes.Veu}>
                 <h1>Выберите объект или создайте новый</h1>
@@ -109,7 +112,6 @@ passwordHandler = () =>{
 }
 
 function mapSatteToProps(state) {
-
     return {
         veu: state.veu.veu,
         btn_veu: state.cls.btn,
@@ -122,7 +124,9 @@ function mapSatteToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         omWindowModal: () => dispatch({ type: CALL_MODEL_WINDOW }),
-        initState: (info) => dispatch({ type: INIT_STATE, info })
+        initState: (info) => dispatch({ type: INIT_STATE, info }),
+        keyBaseToStore: (key) => dispatch({type: KEY_BASE_TO_STORE, key})
+       
     }
 }
 

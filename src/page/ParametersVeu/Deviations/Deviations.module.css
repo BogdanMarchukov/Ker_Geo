@@ -56,4 +56,10 @@
     color: #63f24e;
     margin-left: 10px;
 }
+
+.saveBottom, .saveStart, .SaveConcrete {
+    font-size: 15px;
+    color: red;
+    margin: 0;
+}
  

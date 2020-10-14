@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classes from './Deviations.module.css'
-import {SAVE_TO_STORE_BOTTOM, SAVE_TO_STORE_START, SAVE_TO_STORE_CONCRETE} from '../../../store/actions/actionTypes'
+import { SAVE_TO_STORE_BOTTOM, SAVE_TO_STORE_START, SAVE_TO_STORE_CONCRETE } from '../../../store/actions/actionTypes'
+import Axios from 'axios'
 
 class Deviations extends Component {
 
@@ -15,6 +16,9 @@ class Deviations extends Component {
         cls3: classes.none,
         btnWrite3: "",
         btnSave3: classes.none,
+        saveBottom: classes.none,
+        saveStart: classes.none,
+        SaveConcrete: classes.none,
         bottomSupporting: "",
         bottomTemplate: "",
         bottomAnchor: "",
@@ -81,14 +85,14 @@ class Deviations extends Component {
                 }
 
             )
-        }else {
+        } else {
             this.setState({
                 bottomDisabled: true
             })
         }
     }
 
-    
+
 
     saveStartControl = () => {
         if (
@@ -103,7 +107,7 @@ class Deviations extends Component {
                 }
 
             )
-        }else {
+        } else {
             this.setState({
                 startDisabled: true
             })
@@ -124,7 +128,7 @@ class Deviations extends Component {
                 }
 
             )
-        }else {
+        } else {
             this.setState({
                 concreteDisabled: true
             })
@@ -160,7 +164,7 @@ class Deviations extends Component {
         )
         this.saveBottomControl()
     }
-   
+
 
     handlerBottomUzer = event => {
         this.setState(
@@ -250,139 +254,151 @@ class Deviations extends Component {
             }
         )
         this.saveConcreteControl()
-       
+
     }
 
     // Отображает данные из stora в таблицу Корзина низ
 
     showBottomSupporting = (nV, nObj) => {
-        const namberVeu = ["nV" + (nV +1)]
+        const namberVeu = ["nV" + (nV + 1)]
         if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-           return (this.props.veu.veu[nObj].[namberVeu].oF)
+            return (this.props.veu.veu[nObj].[namberVeu].oF)
         }
     }
 
     showBottomTemplate = (nV, nObj) => {
-        const namberVeu = ["nV" + (nV +1)]
+        const namberVeu = ["nV" + (nV + 1)]
         if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-           return (this.props.veu.veu[nObj].[namberVeu].shF)
+            return (this.props.veu.veu[nObj].[namberVeu].shF)
         }
     }
 
     showBottomAnchor = (nV, nObj) => {
-        const namberVeu = ["nV" + (nV +1)]
+        const namberVeu = ["nV" + (nV + 1)]
         if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-           return (this.props.veu.veu[nObj].[namberVeu].anchor)
+            return (this.props.veu.veu[nObj].[namberVeu].anchor)
         }
     }
 
     showBottomUzer = (nV, nObj) => {
-        const namberVeu = ["nV" + (nV +1)]
+        const namberVeu = ["nV" + (nV + 1)]
         if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-           return (this.props.veu.veu[nObj].[namberVeu].uzer)
+            return (this.props.veu.veu[nObj].[namberVeu].uzer)
         }
     }
 
     showBottomDate = (nV, nObj) => {
-        const namberVeu = ["nV" + (nV +1)]
+        const namberVeu = ["nV" + (nV + 1)]
         if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-           return (this.props.veu.veu[nObj].[namberVeu].date)
-           
+            return (this.props.veu.veu[nObj].[namberVeu].date)
+
         }
     }
     showStartTemplate = (nV, nObj) => {
-        const namberVeu = ["sV" + (nV +1)]
+        const namberVeu = ["sV" + (nV + 1)]
         if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-           return (this.props.veu.veu[nObj].[namberVeu].shF)
+            return (this.props.veu.veu[nObj].[namberVeu].shF)
         }
     }
 
     showStartAnchor = (nV, nObj) => {
-        const namberVeu = ["sV" + (nV +1)]
+        const namberVeu = ["sV" + (nV + 1)]
         if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-           return (this.props.veu.veu[nObj].[namberVeu].anchor)
+            return (this.props.veu.veu[nObj].[namberVeu].anchor)
         }
     }
 
     showStartUzer = (nV, nObj) => {
-        const namberVeu = ["sV" + (nV +1)]
+        const namberVeu = ["sV" + (nV + 1)]
         if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-           return (this.props.veu.veu[nObj].[namberVeu].uzer)
+            return (this.props.veu.veu[nObj].[namberVeu].uzer)
         }
     }
 
     showStartDate = (nV, nObj) => {
-        const namberVeu = ["sV" + (nV +1)]
+        const namberVeu = ["sV" + (nV + 1)]
         if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-           return (this.props.veu.veu[nObj].[namberVeu].date)
-           
+            return (this.props.veu.veu[nObj].[namberVeu].date)
+
         }
     }
 
     showConcreteTemplate = (nV, nObj) => {
-        const namberVeu = ["finV" + (nV +1)]
+        const namberVeu = ["finV" + (nV + 1)]
         if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-           return (this.props.veu.veu[nObj].[namberVeu].shF)
+            return (this.props.veu.veu[nObj].[namberVeu].shF)
         }
     }
 
     showConcreteAnchor = (nV, nObj) => {
-        const namberVeu = ["finV" + (nV +1)]
+        const namberVeu = ["finV" + (nV + 1)]
         if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-           return (this.props.veu.veu[nObj].[namberVeu].anchor)
+            return (this.props.veu.veu[nObj].[namberVeu].anchor)
         }
     }
 
     showConcreteUzer = (nV, nObj) => {
-        const namberVeu = ["finV" + (nV +1)]
+        const namberVeu = ["finV" + (nV + 1)]
         if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-           return (this.props.veu.veu[nObj].[namberVeu].uzer)
+            return (this.props.veu.veu[nObj].[namberVeu].uzer)
         }
     }
 
     showConcreteDate = (nV, nObj) => {
-        const namberVeu = ["finV" + (nV +1)]
+        const namberVeu = ["finV" + (nV + 1)]
         if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-           return (this.props.veu.veu[nObj].[namberVeu].date)
-           
+            return (this.props.veu.veu[nObj].[namberVeu].date)
+
         }
     }
-            //// Защита данных таблицы от перезаписи
+    //// Защита данных таблицы от перезаписи
     noRecordingBottom = (nV, nObj) => {
-        const namberVeu = ["nV" + (nV +1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined){
+        const namberVeu = ["nV" + (nV + 1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
             return true
-        }else return false
-        
+        } else return false
+
     }
 
     noRecordingStart = (nV, nObj) => {
-        const namberVeu = ["sV" + (nV +1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined){
+        const namberVeu = ["sV" + (nV + 1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
             return true
-        }else return false
-        
+        } else return false
+
     }
 
     noRecordingConcrete = (nV, nObj) => {
-        const namberVeu = ["finV" + (nV +1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined){
+        const namberVeu = ["finV" + (nV + 1)]
+        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
             return true
-        }else return false
-        
+        } else return false
+
     }
-    
-    
+
+    saveUpdatesObjectToBase = async activ => {
+        const indx = activ.activIndex,
+            key = activ.id[indx],
+            seveItem = this.props.veu.veu[indx]
+        try {
+            const response=await Axios.patch(`https://geo-ker.firebaseio.com/veu/${key}.json`, seveItem)
+            console.log(response.data)
+        } catch (e) {
+            alert(e)
+        }
+    }
+
+
 
     render() {
-      
-      
+
+       
         return (
             <div className={classes.Deviations}>
                 <h1>Корзина(Низ)</h1>
                 <div className={classes.stringTable}>
                     <p>
-                        Опорный флянец: 
+                        Опорный флянец:
                         <strong>
                             {this.showBottomSupporting(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                         </strong>
@@ -430,16 +446,32 @@ class Deviations extends Component {
                 <button
                     className={this.state.btnSave}
                     disabled={this.state.bottomDisabled}
-                    onClick = {()=>{
-                        this.props.saveToStoreBottom(this.props.activ, this.state)
+                    onClick={() => {
+                        this.setState({
+                            saveBottom: classes.saveBottom,
+                            btnSave: classes.none
+                        })
+                        this.props.saveToStoreBottom(this.props.activ, this.state,)
                     }}
                 >
                     Сохранить
                 </button>
                 <button
+                    className={this.state.saveBottom}  
+                    onClick={ () =>{ 
+                        this.setState({
+                            cls1: classes.none
+                        })
+                        this.saveUpdatesObjectToBase(this.props.activ)
+                }} 
+                                
+                >   
+                    Записать!!!
+                </button>
+                <button
                     onClick={this.showInputBottom}
                     className={this.state.btnWrite1}
-                    disabled= {this.noRecordingBottom(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                    disabled={this.noRecordingBottom(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                 >
                     Вписать
                 </button>
@@ -486,16 +518,30 @@ class Deviations extends Component {
                 <button
                     className={this.state.btnSave2}
                     disabled={this.state.startDisabled}
-                    onClick = {()=>{
+                    onClick={() => {
+                        this.setState({
+                            saveStart: classes.saveStart,
+                            btnSave2: classes.none
+                        })
                         this.props.saveToStoreStart(this.props.activ, this.state)
                     }}
                 >
                     Сохранить
                 </button>
                 <button
+                    className={this.state.saveStart}  
+                    onClick={ () =>{ 
+                        
+                        this.saveUpdatesObjectToBase(this.props.activ)
+                }} 
+                                
+                >   
+                    Записать!!!
+                </button>
+                <button
                     onClick={this.showInputBottom2}
                     className={this.state.btnWrite2}
-                    disabled= {this.noRecordingStart(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                    disabled={this.noRecordingStart(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                 >
                     Вписать
                 </button>
@@ -522,7 +568,7 @@ class Deviations extends Component {
                         <strong>
                             {this.showConcreteUzer(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                         </strong>
-                    
+
                     </p>
                 </div>
                 <div className={classes.stringTable}>
@@ -542,16 +588,30 @@ class Deviations extends Component {
                 <button
                     className={this.state.btnSave3}
                     disabled={this.state.concreteDisabled}
-                    onClick = {()=>{
+                    onClick={() => {
+                        this.setState({
+                            SaveConcrete: classes.SaveConcrete,
+                            btnSave3: classes.none
+                        })
                         this.props.saveToStoreConcrete(this.props.activ, this.state)
                     }}
                 >
                     Сохранить
                 </button>
                 <button
+                    className={this.state.SaveConcrete}  
+                    onClick={ () =>{ 
+                        
+                        this.saveUpdatesObjectToBase(this.props.activ)
+                }} 
+                                
+                >   
+                    Записать!!!
+                </button>
+                <button
                     onClick={this.showInputBottom3}
                     className={this.state.btnWrite3}
-                    disabled= {this.noRecordingConcrete(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                    disabled={this.noRecordingConcrete(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                 >
                     Вписать
                 </button>
@@ -562,7 +622,7 @@ class Deviations extends Component {
 }
 
 function mapStateToProps(state) {
-            
+
     return {
         activ: state.imemVeu,
         veu: state.veu
@@ -572,9 +632,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        saveToStoreBottom: (activ, infoVeu) => dispatch({type: SAVE_TO_STORE_BOTTOM, activ, infoVeu}),
-        saveToStoreStart: (activ, infoVeu) => dispatch({type: SAVE_TO_STORE_START, activ, infoVeu}),
-        saveToStoreConcrete: (activ, infoVeu) => dispatch({type: SAVE_TO_STORE_CONCRETE, activ, infoVeu})
+        saveToStoreBottom: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_BOTTOM, activ, infoVeu }),
+        saveToStoreStart: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_START, activ, infoVeu }),
+        saveToStoreConcrete: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_CONCRETE, activ, infoVeu })
 
     }
 }

@@ -59,7 +59,7 @@ import { SAVE_X_Y_H_TO_STORE } from '../../../store/actions/actionTypes'
 
 
     render() {
-console.log(this.props.veu[0].["XYH1"])
+
         return (
             <div className={classes.Pipes}>
                 <h1>Отметки труб</h1>

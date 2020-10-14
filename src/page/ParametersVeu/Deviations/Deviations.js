@@ -376,13 +376,15 @@ class Deviations extends Component {
 
     }
 
+    /// сохранение в Б.Д.
+
     saveUpdatesObjectToBase = async activ => {
         const indx = activ.activIndex,
             key = activ.id[indx],
             seveItem = this.props.veu.veu[indx]
         try {
-            const response=await Axios.patch(`https://geo-ker.firebaseio.com/veu/${key}.json`, seveItem)
-            console.log(response.data)
+            await Axios.patch(`https://geo-ker.firebaseio.com/veu/${key}.json`, seveItem)
+           
         } catch (e) {
             alert(e)
         }
@@ -531,7 +533,9 @@ class Deviations extends Component {
                 <button
                     className={this.state.saveStart}  
                     onClick={ () =>{ 
-                        
+                        this.setState({
+                            cls2: classes.none
+                        })
                         this.saveUpdatesObjectToBase(this.props.activ)
                 }} 
                                 
@@ -601,7 +605,9 @@ class Deviations extends Component {
                 <button
                     className={this.state.SaveConcrete}  
                     onClick={ () =>{ 
-                        
+                        this.setState({
+                            cls3: classes.none
+                        })
                         this.saveUpdatesObjectToBase(this.props.activ)
                 }} 
                                 

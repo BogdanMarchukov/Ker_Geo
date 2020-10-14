@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classes from './Pipes.module.css'
 import { SAVE_X_Y_H_TO_STORE } from '../../../store/actions/actionTypes'
+import Axios from 'axios'
 
  class Pipes extends Component {
 
@@ -11,6 +12,7 @@ import { SAVE_X_Y_H_TO_STORE } from '../../../store/actions/actionTypes'
         h:"",
         cls: classes.none,
         Btn1: "",
+        btnToSaveBase: classes.none,
         btnSave: classes.none,
         disabled: true
 
@@ -51,6 +53,18 @@ import { SAVE_X_Y_H_TO_STORE } from '../../../store/actions/actionTypes'
         if( this.props.veu[indexObj].[XYH] !== undefined ) {
             let i = Number(this.props.veu[indexObj].[XYH].h) + excess
             return i.toFixed(4)
+        }
+    }
+        // сохранение в Б.Д.
+    saveUpdatesObjectToBase = async activ => {
+        const indx = activ.activIndex,
+            key = activ.id[indx],
+            seveItem = this.props.veu[indx]
+        try {
+            await Axios.patch(`https://geo-ker.firebaseio.com/veu/${key}.json`, seveItem)
+           
+        } catch (e) {
+            alert(e)
         }
     }
 
@@ -154,11 +168,24 @@ import { SAVE_X_Y_H_TO_STORE } from '../../../store/actions/actionTypes'
                     Вписать
                 </button>
                 <button
+                    className={this.state.btnToSaveBase}  
+                    onClick={ () =>{ 
+                        this.setState({
+                            cls: classes.none
+                        })
+                        this.saveUpdatesObjectToBase(this.props.activ)
+                }} 
+                                
+                >   
+                    Записать!!!
+                </button>
+                <button
                     onClick = {()=>{
                         this.setState({
                             cls: classes.none,
-                            Btn1: "",
-                            btnSave: classes.none
+                            Btn1: classes.none,
+                            btnSave: classes.none,
+                            btnToSaveBase: classes.btnToSaveBase
                         })
                         this.props.parametrsToStore(this.props.activ, this.state)
                     }}

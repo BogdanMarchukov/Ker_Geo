@@ -8,7 +8,7 @@ const initialState = {
 
 
 export default function veuOptions(state = initialState, action) {
-   
+
     switch (action.type) {
         case 'KEY_BASE_TO_STORE':
             return {
@@ -35,6 +35,14 @@ export default function veuOptions(state = initialState, action) {
                 name: state.name,
                 activIndexVeu: action.activIndexVeu,
                 id: state.id
+            }
+        case 'ADD_NEW_NAME_OBJECT':
+            return {
+                activObject: state.activObject,
+                activIndex: state.activIndex,
+                name: state.name,
+                activIndexVeu: action.activIndexVeu,
+                id: [...state.id, action.name]
             }
         default:
             return state

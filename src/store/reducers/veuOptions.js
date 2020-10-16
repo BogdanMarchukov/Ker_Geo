@@ -10,13 +10,13 @@ const initialState = {
 export default function veuOptions(state = initialState, action) {
 
     switch (action.type) {
-        case 'KEY_BASE_TO_STORE':
+        case 'FINISH_INIT_TO_STORE':
             return {
                 activObject: state.activObject,
                 activIndex: state.activIndex,
                 name: state.name,
                 activIndexVeu: state.activIndexVeu,
-                id: [...state.id, action.key]
+                id: action.key
 
             }
         case 'OPEN_OBJECT':
@@ -36,13 +36,13 @@ export default function veuOptions(state = initialState, action) {
                 activIndexVeu: action.activIndexVeu,
                 id: state.id
             }
-        case 'ADD_NEW_NAME_OBJECT':
+        case 'CREATE_NEW_OBJECT':
             return {
                 activObject: state.activObject,
                 activIndex: state.activIndex,
                 name: state.name,
                 activIndexVeu: action.activIndexVeu,
-                id: [...state.id, action.name]
+                id: [...state.id, action.newkey]
             }
         default:
             return state

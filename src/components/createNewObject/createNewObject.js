@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classes from './CreateNewObject.module.css'
-import {  CLOSE_WINDOW, ADD_NEW_NAME_OBJECT } from '../../store/actions/actionTypes'
+import {  CLOSE_WINDOW } from '../../store/actions/actionTypes'
 import { addNewObject } from '../../store/actions/createNewObject'
-import Axios from 'axios'
+
 
 
 class CreateNewObject extends Component {
@@ -46,15 +46,7 @@ class CreateNewObject extends Component {
 
     }
 
-    onSave = async state => {
-        try {
-            const response = await Axios.post('https://geo-ker.firebaseio.com/veu.json', state)
-            this.props.addKeyNewObj(response.data.name)
-        } catch (e) {
-            console.log(e)
-        }
-        
-    }
+    
 
 
 
@@ -82,7 +74,7 @@ class CreateNewObject extends Component {
                                 className={classes.create}
                                 onClick={ () => { 
                                 
-                                    this.props.onName(this.state, this.onSave(this.state)) 
+                                    this.props.onName(this.state) 
                                 }}
                                 disabled={this.state.disabled}
                                
@@ -116,8 +108,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         onName: info => dispatch(addNewObject(info)),
-        closeWindow: () => dispatch({type: CLOSE_WINDOW}),
-        addKeyNewObj: name => dispatch({type: ADD_NEW_NAME_OBJECT, name})
+        closeWindow: () => dispatch({type: CLOSE_WINDOW})
     }
 
 }

@@ -3,9 +3,9 @@ import classes from './Veu.module.css'
 import ObjectButton from '../../components/objectButton/ObjectButton'
 import { connect } from 'react-redux'
 import CreateNewObject from '../../components/CreateNewObject/CreateNewObject'
-import { CALL_MODEL_WINDOW, INIT_STATE, KEY_BASE_TO_STORE} from '../../store/actions/actionTypes'
-import Axios from 'axios'
+import { CALL_MODEL_WINDOW, KEY_BASE_TO_STORE} from '../../store/actions/actionTypes'
 import Loader from '../../components/Loader/Loader'
+import{initState} from '../../store/actions/initState'
 
 
 class Veu extends Component {
@@ -22,22 +22,8 @@ class Veu extends Component {
 
 
 
-    async componentDidMount() {
-        try {
-            const response = await Axios.get('https://geo-ker.firebaseio.com/veu.json')
-            const veuBase = []
-           
-            this.props.initState(veuBase)
-           
-            Object.keys(response.data).forEach((key) => {
-                veuBase.push(response.data.[key])
-                this.props.keyBaseToStore(key)
-                
-            })
-        } catch (e) {
-            console.log(e)
-        }
-
+    componentDidMount() {
+        this.props.initState()
     }
 
     inputHandler = (event) => {
@@ -94,6 +80,7 @@ passwordHandler = () =>{
 
                 </div>
                 <div className={this.state.passwordCls}>
+                    <p>V.1.0.1</p>
                     <div className={classes.FormPassword}>
                         <h1>{this.state.h1}</h1>
                         <input onChange={this.inputHandler}/>
@@ -124,7 +111,7 @@ function mapSatteToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         omWindowModal: () => dispatch({ type: CALL_MODEL_WINDOW }),
-        initState: (info) => dispatch({ type: INIT_STATE, info }),
+        initState: () => dispatch(initState()),
         keyBaseToStore: (key) => dispatch({type: KEY_BASE_TO_STORE, key})
        
     }

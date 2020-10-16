@@ -393,7 +393,7 @@ class Deviations extends Component {
 
 
     render() {
-
+        console.log(this.props.activ)
        
         return (
             <div className={classes.Deviations}>

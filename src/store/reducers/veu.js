@@ -4,25 +4,41 @@ const initialState = {
     veu: [
 
     ],
-    loading: true
+    loading: false
 }
 
 
 export default function veuReducer(state = initialState, action) {
-   
+
     switch (action.type) {
-        case 'INIT_STATE':
+        case 'START_INIT_TO_STORE':
 
             return {
-                veu: action.info
-                
+                veu: state.veu,
+                loading: true
             }
-    
+
+        case 'FINISH_INIT_TO_STORE':
+
+            return {
+                veu: action.veuBase,
+                loading: false
+
+            }
+        case 'START_CREATE_NEW_OBJECT':
+
+            return {
+                veu: state.veu,
+                loading: true
+
+            }
+
         case 'CREATE_NEW_OBJECT':
 
             return {
 
-                veu: [...state.veu, action.info]
+                veu: [...state.veu, action.info],
+                loading: false
             }
         case 'SAVE_TO_STORE_BOTTOM':
             return {

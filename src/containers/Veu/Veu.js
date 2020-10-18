@@ -3,7 +3,7 @@ import classes from './Veu.module.css'
 import ObjectButton from '../../components/objectButton/ObjectButton'
 import { connect } from 'react-redux'
 import CreateNewObject from '../../components/CreateNewObject/CreateNewObject'
-import { CALL_MODEL_WINDOW, KEY_BASE_TO_STORE} from '../../store/actions/actionTypes'
+import { CALL_MODEL_WINDOW, KEY_BASE_TO_STORE, BTN_OBJECT_DISABLED_OF} from '../../store/actions/actionTypes'
 import Loader from '../../components/Loader/Loader'
 import{initState} from '../../store/actions/initState'
 
@@ -35,6 +35,7 @@ class Veu extends Component {
 
 passwordHandler = () =>{
     if (this.state.passwordUser === this.state.password) {
+        this.props.btnObjectDisabledOf()
         this.setState({
             passwordCls: classes.none
         })
@@ -112,7 +113,8 @@ function mapDispatchToProps(dispatch) {
     return {
         omWindowModal: () => dispatch({ type: CALL_MODEL_WINDOW }),
         initState: () => dispatch(initState()),
-        keyBaseToStore: (key) => dispatch({type: KEY_BASE_TO_STORE, key})
+        keyBaseToStore: (key) => dispatch({type: KEY_BASE_TO_STORE, key}),
+        btnObjectDisabledOf: () => dispatch({type: BTN_OBJECT_DISABLED_OF})
        
     }
 }

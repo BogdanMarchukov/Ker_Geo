@@ -14,6 +14,7 @@ const ObjectButton = props => {
             <div className={classes.ObjectButton}>
                 <NavLink to="veu-options">
                     <button 
+                    disabled={props.disabled}
                     onClick={()=> {
                         props.totallItem(props)
                        
@@ -33,6 +34,12 @@ const ObjectButton = props => {
 
         
 }
+function mapStateToProps(state) {
+   
+   return {
+       disabled: state.cls.disabledObj
+   }
+}
 
 function mapDispatchToProps(dispatch){
     return {
@@ -40,4 +47,4 @@ function mapDispatchToProps(dispatch){
     }
 }
 
-export default connect(null, mapDispatchToProps) (ObjectButton);
+export default connect(mapStateToProps, mapDispatchToProps) (ObjectButton);

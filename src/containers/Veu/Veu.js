@@ -8,6 +8,7 @@ import Loader from '../../components/Loader/Loader'
 import{initState} from '../../store/actions/initState'
 
 
+
 class Veu extends Component {
 
     state = {

@@ -3,6 +3,9 @@ import { connect } from 'react-redux'
 import classes from './Deviations.module.css'
 import { SAVE_TO_STORE_BOTTOM, SAVE_TO_STORE_START, SAVE_TO_STORE_CONCRETE } from '../../../store/actions/actionTypes'
 import Axios from 'axios'
+import LoaderSave from '../../../components/LoaderSave/LoaderSave'
+import {saveToBase} from '../../../store/actions/deviations'
+
 
 class Deviations extends Component {
 
@@ -393,7 +396,7 @@ class Deviations extends Component {
 
 
     render() {
-        console.log(this.props.activ)
+        console.log(this.props.startLoadStart)
        
         return (
             <div className={classes.Deviations}>
@@ -445,6 +448,7 @@ class Deviations extends Component {
                     <input onChange={this.handlerBottomUzer} placeholder="Исполнитель" />
                     <input onChange={this.handlerBottomDate} placeholder="Дата" />
                 </div>
+
                 <button
                     className={this.state.btnSave}
                     disabled={this.state.bottomDisabled}
@@ -462,21 +466,33 @@ class Deviations extends Component {
                     className={this.state.saveBottom}  
                     onClick={ () =>{ 
                         this.setState({
-                            cls1: classes.none
+                            cls1: classes.none,
+                            saveBottom: classes.none
                         })
-                        this.saveUpdatesObjectToBase(this.props.activ)
+                        this.props.saveToBase(
+                            this.props.activ, this.props.veu.veu[this.props.activ.activIndex], "Bottom"
+                        )
                 }} 
                                 
                 >   
                     Записать!!!
                 </button>
+               
                 <button
                     onClick={this.showInputBottom}
                     className={this.state.btnWrite1}
-                    disabled={this.noRecordingBottom(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                    disabled={
+                        this.noRecordingBottom(this.props.activ.activIndexVeu, this.props.activ.activIndex)
+                    }
                 >
                     Вписать
                 </button>
+                    {
+                    this.props.startLoadBottom === true
+                    ? <LoaderSave startLoad = {this.props.startLoad}/>
+                    : null
+                    }
+                    
                 <h1>До Бетона</h1>
                 <div className={classes.stringTable}>
                     <p>
@@ -534,14 +550,18 @@ class Deviations extends Component {
                     className={this.state.saveStart}  
                     onClick={ () =>{ 
                         this.setState({
-                            cls2: classes.none
+                            cls2: classes.none,
+                            saveStart: classes.none
                         })
-                        this.saveUpdatesObjectToBase(this.props.activ)
+                        this.props.saveToBase(
+                            this.props.activ, this.props.veu.veu[this.props.activ.activIndex], "Start"
+                        )
                 }} 
                                 
                 >   
                     Записать!!!
                 </button>
+                
                 <button
                     onClick={this.showInputBottom2}
                     className={this.state.btnWrite2}
@@ -549,6 +569,12 @@ class Deviations extends Component {
                 >
                     Вписать
                 </button>
+                {
+                    
+                    this.props.startLoadStart === true
+                    ? <LoaderSave startLoad = {this.props.startLoad}/>
+                    : null
+                    }
                 <h1>Бетонирование</h1>
                 <div className={classes.stringTable}>
                     <p>
@@ -606,9 +632,12 @@ class Deviations extends Component {
                     className={this.state.SaveConcrete}  
                     onClick={ () =>{ 
                         this.setState({
-                            cls3: classes.none
+                            cls3: classes.none,
+                            SaveConcrete: classes.none
                         })
-                        this.saveUpdatesObjectToBase(this.props.activ)
+                        this.props.saveToBase(
+                            this.props.activ, this.props.veu.veu[this.props.activ.activIndex], "Concrete"
+                        )
                 }} 
                                 
                 >   
@@ -621,6 +650,12 @@ class Deviations extends Component {
                 >
                     Вписать
                 </button>
+                {
+                    
+                    this.props.startLoadConcrete === true
+                    ? <LoaderSave startLoad = {this.props.startLoad}/>
+                    : null
+                    }
 
             </div>
         );
@@ -628,10 +663,14 @@ class Deviations extends Component {
 }
 
 function mapStateToProps(state) {
-
+    console.log(state.cls.startLoadBottom)
     return {
         activ: state.imemVeu,
-        veu: state.veu
+        veu: state.veu,
+        startLoad: state.cls.startLoad,
+        startLoadBottom: state.cls.startLoadBottom,
+        startLoadStart: state.cls.startLoadStart,
+        startLoadConcrete: state.cls.startLoadConcrete
 
     }
 }
@@ -640,7 +679,8 @@ function mapDispatchToProps(dispatch) {
     return {
         saveToStoreBottom: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_BOTTOM, activ, infoVeu }),
         saveToStoreStart: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_START, activ, infoVeu }),
-        saveToStoreConcrete: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_CONCRETE, activ, infoVeu })
+        saveToStoreConcrete: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_CONCRETE, activ, infoVeu }),
+        saveToBase: (activ, save, item) => dispatch(saveToBase(activ, save, item))
 
     }
 }

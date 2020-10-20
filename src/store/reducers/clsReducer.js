@@ -7,7 +7,8 @@ const initialState = {
     startLoad: null,
     startLoadBottom: false,
     startLoadStart: false,
-    startLoadConcrete: false
+    startLoadConcrete: false,
+    startLoadXYH: false
 }
 
 export default function clsReducer(state = initialState, action) {
@@ -21,7 +22,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoad: state.startLoad,
                 startLoadBottom: state.startLoadBottom,
                 startLoadStart: state.startLoadStart,
-                startLoadConcrete: state.startLoadConcrete
+                startLoadConcrete: state.startLoadConcrete,
+                startLoadXYH: state.startLoadXYH
             }
         case 'CLOSE_WINDOW':
             return {
@@ -32,7 +34,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoad: state.startLoad,
                 startLoadBottom: state.startLoadBottom,
                 startLoadStart: state.startLoadStart,
-                startLoadConcrete: state.startLoadConcrete
+                startLoadConcrete: state.startLoadConcrete,
+                startLoadXYH: state.startLoadXYH
             }
         case 'BTN_OBJECT_DISABLED_OF':
             return {
@@ -43,7 +46,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoad: state.startLoad,
                 startLoadBottom: state.startLoadBottom,
                 startLoadStart: state.startLoadStart,
-                startLoadConcrete: state.startLoadConcrete
+                startLoadConcrete: state.startLoadConcrete,
+                startLoadXYH: state.startLoadXYH
             }
         case 'START_SAVE_TO_BASE_BOTTOM':
             return {
@@ -54,7 +58,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoad: true,
                 startLoadBottom: true,
                 startLoadStart: false,
-                startLoadConcrete: false
+                startLoadConcrete: false,
+                startLoadXYH: false
             }
         case 'START_SAVE_TO_BASE_START':
             return {
@@ -65,7 +70,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoadStart: true,
                 startLoad: true,
                 startLoadBottom: false,
-                startLoadConcrete: false
+                startLoadConcrete: false,
+                startLoadXYH: false
 
             }
         case 'START_SAVE_TO_BASE_CONCRETE':
@@ -77,7 +83,21 @@ export default function clsReducer(state = initialState, action) {
                 startLoadStart: false,
                 startLoad: true,
                 startLoadBottom: false,
-                startLoadConcrete: true
+                startLoadConcrete: true,
+                startLoadXYH: false
+
+            }
+        case 'START_SAVE_TO_BASE_XYH':
+            return {
+                none: state.none,
+                btn: state.btn,
+                btnObj: state.btnObj,
+                disabledObj: state.disabledObj,
+                startLoadStart: false,
+                startLoad: true,
+                startLoadBottom: false,
+                startLoadConcrete: false,
+                startLoadXYH: true
 
             }
         case 'FINISH_SAVE_TO_BASE':
@@ -89,7 +109,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoad: false,
                 startLoadBottom: state.startLoadBottom,
                 startLoadStart: state.startLoadStart,
-                startLoadConcrete: state.startLoadConcrete
+                startLoadConcrete: state.startLoadConcrete,
+                startLoadXYH: state.startLoadXYH
             }
         case 'CREATE_ACTIV_INDEX_VEU':
             return {
@@ -100,7 +121,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoad: null,
                 startLoadBottom: true,
                 startLoadStart: true,
-                startLoadConcrete: true
+                startLoadConcrete: true,
+                startLoadXYH: true
             }
 
 

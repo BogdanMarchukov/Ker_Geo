@@ -403,7 +403,7 @@ class Deviations extends Component {
                 <h1>Корзина(Низ)</h1>
                 <div className={classes.stringTable}>
                     <p>
-                        Опорный флянец:
+                        Опорный фланец:
                         <strong>
                             {this.showBottomSupporting(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                         </strong>
@@ -411,7 +411,7 @@ class Deviations extends Component {
                 </div>
                 <div className={classes.stringTable}>
                     <p>
-                        Шаблонный флянец:
+                        Шаблонный фланец:
                         <strong>
                             {this.showBottomTemplate(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                         </strong>
@@ -442,8 +442,8 @@ class Deviations extends Component {
                     </p>
                 </div>
                 <div className={this.state.cls1}>
-                    <input onChange={this.handlerBottomSupporting} placeholder="Опорный флянец" />
-                    <input onChange={this.handlerBottomTemplate} placeholder="Шаблонный флянец" />
+                    <input onChange={this.handlerBottomSupporting} placeholder="Опорный фланец" />
+                    <input onChange={this.handlerBottomTemplate} placeholder="Шаблонный фланец" />
                     <input onChange={this.handlerBottomAnchor} placeholder="Анкер" />
                     <input onChange={this.handlerBottomUzer} placeholder="Исполнитель" />
                     <input onChange={this.handlerBottomDate} placeholder="Дата" />
@@ -496,7 +496,7 @@ class Deviations extends Component {
                 <h1>До Бетона</h1>
                 <div className={classes.stringTable}>
                     <p>
-                        Шаблонный флянец:
+                        Шаблонный фланец:
                         <strong>
                             {this.showStartTemplate(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                         </strong>
@@ -528,7 +528,7 @@ class Deviations extends Component {
                 </div>
 
                 <div className={this.state.cls2}>
-                    <input onChange={this.handlerStartTemplate} placeholder="Шаблонный флянец" />
+                    <input onChange={this.handlerStartTemplate} placeholder="Шаблонный фланец" />
                     <input onChange={this.handlerStartAnchor} placeholder="Анкер" />
                     <input onChange={this.handlerStartUzer} placeholder="Исполнитель" />
                     <input onChange={this.handlerStartDate} placeholder="Дата" />
@@ -578,7 +578,7 @@ class Deviations extends Component {
                 <h1>Бетонирование</h1>
                 <div className={classes.stringTable}>
                     <p>
-                        Шаблонный флянец:
+                        Шаблонный фланец:
                         <strong>
                             {this.showConcreteTemplate(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                         </strong>
@@ -610,7 +610,7 @@ class Deviations extends Component {
                     </p>
                 </div>
                 <div className={this.state.cls3}>
-                    <input onChange={this.handlerConcreteTemplate} placeholder="Шаблонный флянец" />
+                    <input onChange={this.handlerConcreteTemplate} placeholder="Шаблонный фланец" />
                     <input onChange={this.handlerConcreteAnchor} placeholder="Анкер" />
                     <input onChange={this.handlerConcreteUzer} placeholder="Исполнитель" />
                     <input onChange={this.handlerConcreteDate} placeholder="Дата" />

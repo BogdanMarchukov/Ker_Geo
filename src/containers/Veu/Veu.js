@@ -82,7 +82,7 @@ passwordHandler = () =>{
 
                 </div>
                 <div className={this.state.passwordCls}>
-                    <p>V.1.0.1</p>
+                    <p>V.1.0.2</p>
                     <div className={classes.FormPassword}>
                         <h1>{this.state.h1}</h1>
                         <input onChange={this.inputHandler}/>

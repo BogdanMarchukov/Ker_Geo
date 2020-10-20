@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classes from './Pipes.module.css'
 import { SAVE_X_Y_H_TO_STORE } from '../../../store/actions/actionTypes'
-import Axios from 'axios'
+import {saveUpdatesObjectToBase} from '../../../store/actions/pipes'
+import LoaderSave from '../../../components/LoaderSave/LoaderSave'
 
  class Pipes extends Component {
 
@@ -54,22 +55,17 @@ import Axios from 'axios'
             let i = Number(this.props.veu[indexObj].[XYH].h) + excess
             return i.toFixed(4)
         }
-    }
-        // сохранение в Б.Д.
-    saveUpdatesObjectToBase = async activ => {
-        const indx = activ.activIndex,
-            key = activ.id[indx],
-            seveItem = this.props.veu[indx]
-        try {
-            await Axios.patch(`https://geo-ker.firebaseio.com/veu/${key}.json`, seveItem)
-           
-        } catch (e) {
-            alert(e)
-        }
-    }
+    } 
 
-    
+    // защита от перезаписи
 
+    noRecordingXYH = (nV, nObj) => {
+        const namberVeu = ["XYH" + (nV + 1)]
+        if (this.props.veu[nObj].[namberVeu] !== undefined) {
+            return true
+        } else return false
+
+    }
 
 
     render() {
@@ -128,7 +124,7 @@ import Axios from 'axios'
                 </div>
                 <div className={classes.stringTable}>
                     <p>
-                        Опорный флянец:
+                        Опорный фланец:
                         <strong>
                             {this.paymentPipes(this.props.activ.activIndexVeu, this.props.activ.activIndex, 2.65 ) }
                         </strong>
@@ -136,7 +132,7 @@ import Axios from 'axios'
                 </div>
                 <div className={classes.stringTable}>
                     <p>
-                        Шаблонный флянец:
+                        Шаблонный фланец:
                         <strong>
                             {this.showContent(this.props.activ.activIndexVeu, this.props.activ.activIndex, "h")}
                         </strong>
@@ -157,6 +153,7 @@ import Axios from 'axios'
                 </div>
                 <button
                     className={this.state.Btn1}
+                    disabled ={this.noRecordingXYH(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                     onClick = {()=>{
                         this.setState({
                              cls: classes.show,
@@ -171,9 +168,13 @@ import Axios from 'axios'
                     className={this.state.btnToSaveBase}  
                     onClick={ () =>{ 
                         this.setState({
-                            cls: classes.none
+                            cls: classes.none,
+                            btnToSaveBase: classes.none
                         })
-                        this.saveUpdatesObjectToBase(this.props.activ)
+                        this.props.saveUpdatesObjectToBase(
+                            this.props.activ, this.props.veu[this.props.activ.activIndex]
+                            
+                        )
                 }} 
                                 
                 >   
@@ -195,6 +196,12 @@ import Axios from 'axios'
                 >
                     Сохранить
                 </button>
+                {
+                    
+                    this.props.startLoadXYH === true
+                    ? <LoaderSave startLoad = {this.props.startLoad}/>
+                    : null
+                    }
             </div>
         );
     }
@@ -204,13 +211,16 @@ function mapStateToProps(state) {
 
     return{
         activ: state.imemVeu,
-        veu: state.veu.veu
+        veu: state.veu.veu,
+        startLoadXYH: state.cls.startLoadXYH,
+        startLoad: state.cls.startLoad
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        parametrsToStore: (activ, info) => dispatch ({type: SAVE_X_Y_H_TO_STORE, activ, info})
+        parametrsToStore: (activ, info) => dispatch ({type: SAVE_X_Y_H_TO_STORE, activ, info}),
+        saveUpdatesObjectToBase: (activ, info) => dispatch (saveUpdatesObjectToBase(activ, info))
     }
 }
 

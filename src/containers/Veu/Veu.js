@@ -16,38 +16,62 @@ class Veu extends Component {
         passwordCls: classes.password,
         password: '1987',
         passwordUser: "",
-        h1: "Введите пароль"
+        h1: "Введите пароль",
+        checked: false
 
     }
 
 
-
-
     componentDidMount() {
         this.props.initState()
+        this.readPassword()
     }
 
     inputHandler = (event) => {
         this.setState({
             passwordUser: event.target.value
         })
-    
-}
 
-passwordHandler = () =>{
-    if (this.state.passwordUser === this.state.password) {
-        this.props.btnObjectDisabledOf()
+    }
+
+    // функция следит за состоянием чекбокса
+    inputCheckboxHandler = () => {
         this.setState({
-            passwordCls: classes.none
-        })
-    } else {
-        this.setState({
-            h1: "Не верный пароль"
+            checked: !this.state.checked
         })
     }
-}
 
+    // Сохранение пароля в LocalStorage
+    savePassword = () => {
+        if (this.state.checked === true) {
+            localStorage.setItem('password', this.state.passwordUser)
+        }
+    }
 
+    // проверка пароля из LocalStorage
+    readPassword = () => {
+        const pass = localStorage.getItem('password');
+        if (pass === this.state.password) {
+            this.props.btnObjectDisabledOf()
+            this.setState({
+                passwordCls: classes.none
+            })
+        }
+    }
+
+    passwordHandler = () => {
+        if (this.state.passwordUser === this.state.password) {
+            this.props.btnObjectDisabledOf()
+            this.savePassword()
+            this.setState({
+                passwordCls: classes.none
+            })
+        } else {
+            this.setState({
+                h1: "Не верный пароль"
+            })
+        }
+    }
 
 
     render() {
@@ -82,10 +106,18 @@ passwordHandler = () =>{
 
                 </div>
                 <div className={this.state.passwordCls}>
-                    <p>V.1.0.2</p>
+                    <p>V.1.0.3</p>
                     <div className={classes.FormPassword}>
                         <h1>{this.state.h1}</h1>
                         <input onChange={this.inputHandler}/>
+                        <label>
+                            <input
+                                className={classes.box} type="checkbox"
+                                onChange={this.inputCheckboxHandler}
+                            />
+                            Сохранить пароль
+                        </label>
+
                         <button onClick={this.passwordHandler}>Отправить</button>
                     </div>
                 </div>
@@ -100,7 +132,7 @@ passwordHandler = () =>{
     }
 }
 
-function mapSatteToProps(state) {
+function mapStateToProps(state) {
     return {
         veu: state.veu.veu,
         btn_veu: state.cls.btn,
@@ -121,5 +153,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-
-export default connect(mapSatteToProps, mapDispatchToProps)(Veu)
+export default connect(mapStateToProps, mapDispatchToProps)(Veu)

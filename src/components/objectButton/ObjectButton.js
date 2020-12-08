@@ -13,14 +13,14 @@ const ObjectButton = props => {
         return (
             <div className={classes.ObjectButton}>
                 <NavLink to="veu-options">
-                    <button 
-                    disabled={props.disabled}
-                    onClick={()=> {
-                        props.totallItem(props)
-                       
+                    <button
+                        disabled={props.disabled}
+                        onClick={() => {
+                            props.totallItem(props)
+
                         }
-                        
-                    }
+
+                        }
                     
                     >
                         <p>{props.name}</p>

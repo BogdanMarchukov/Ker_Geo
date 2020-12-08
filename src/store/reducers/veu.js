@@ -43,7 +43,7 @@ export default function veuReducer(state = initialState, action) {
         case 'SAVE_TO_STORE_BOTTOM':
             return {
                 veu: state.veu,
-                ...state.veu[action.activ.activIndex].['nV' + (action.activ.activIndexVeu + 1)] = {
+                ...state.veu[action.activ.activIndex]['nV' + (action.activ.activIndexVeu + 1)] = {
                     oF: action.infoVeu.bottomSupporting,
                     shF: action.infoVeu.bottomTemplate,
                     anchor: action.infoVeu.bottomAnchor,
@@ -54,7 +54,7 @@ export default function veuReducer(state = initialState, action) {
         case 'SAVE_TO_STORE_START':
             return {
                 veu: state.veu,
-                ...state.veu[action.activ.activIndex].['sV' + (action.activ.activIndexVeu + 1)] = {
+                ...state.veu[action.activ.activIndex]['sV' + (action.activ.activIndexVeu + 1)] = {
                     shF: action.infoVeu.startTemplate,
                     anchor: action.infoVeu.startAnchor,
                     uzer: action.infoVeu.startUzer,
@@ -64,7 +64,7 @@ export default function veuReducer(state = initialState, action) {
         case 'SAVE_TO_STORE_CONCRETE':
             return {
                 veu: state.veu,
-                ...state.veu[action.activ.activIndex].['finV' + (action.activ.activIndexVeu + 1)] = {
+                ...state.veu[action.activ.activIndex]['finV' + (action.activ.activIndexVeu + 1)] = {
                     shF: action.infoVeu.concreteTemplate,
                     anchor: action.infoVeu.concreteAnchor,
                     uzer: action.infoVeu.concreteUzer,
@@ -74,7 +74,7 @@ export default function veuReducer(state = initialState, action) {
         case 'SAVE_X_Y_H_TO_STORE':
             return {
                 veu: state.veu,
-                ...state.veu[action.activ.activIndex].['XYH' + (action.activ.activIndexVeu + 1)] = {
+                ...state.veu[action.activ.activIndex]['XYH' + (action.activ.activIndexVeu + 1)] = {
                     x: action.info.x,
                     y: action.info.y,
                     h: action.info.h

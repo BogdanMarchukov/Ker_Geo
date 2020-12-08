@@ -264,100 +264,100 @@ class Deviations extends Component {
 
     showBottomSupporting = (nV, nObj) => {
         const namberVeu = ["nV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-            return (this.props.veu.veu[nObj].[namberVeu].oF)
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].oF)
         }
     }
 
     showBottomTemplate = (nV, nObj) => {
         const namberVeu = ["nV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-            return (this.props.veu.veu[nObj].[namberVeu].shF)
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].shF)
         }
     }
 
     showBottomAnchor = (nV, nObj) => {
         const namberVeu = ["nV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-            return (this.props.veu.veu[nObj].[namberVeu].anchor)
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].anchor)
         }
     }
 
     showBottomUzer = (nV, nObj) => {
         const namberVeu = ["nV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-            return (this.props.veu.veu[nObj].[namberVeu].uzer)
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].uzer)
         }
     }
 
     showBottomDate = (nV, nObj) => {
         const namberVeu = ["nV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-            return (this.props.veu.veu[nObj].[namberVeu].date)
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].date)
 
         }
     }
     showStartTemplate = (nV, nObj) => {
         const namberVeu = ["sV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-            return (this.props.veu.veu[nObj].[namberVeu].shF)
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].shF)
         }
     }
 
     showStartAnchor = (nV, nObj) => {
         const namberVeu = ["sV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-            return (this.props.veu.veu[nObj].[namberVeu].anchor)
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].anchor)
         }
     }
 
     showStartUzer = (nV, nObj) => {
         const namberVeu = ["sV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-            return (this.props.veu.veu[nObj].[namberVeu].uzer)
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].uzer)
         }
     }
 
     showStartDate = (nV, nObj) => {
         const namberVeu = ["sV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-            return (this.props.veu.veu[nObj].[namberVeu].date)
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].date)
 
         }
     }
 
     showConcreteTemplate = (nV, nObj) => {
         const namberVeu = ["finV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-            return (this.props.veu.veu[nObj].[namberVeu].shF)
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].shF)
         }
     }
 
     showConcreteAnchor = (nV, nObj) => {
         const namberVeu = ["finV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-            return (this.props.veu.veu[nObj].[namberVeu].anchor)
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].anchor)
         }
     }
 
     showConcreteUzer = (nV, nObj) => {
         const namberVeu = ["finV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-            return (this.props.veu.veu[nObj].[namberVeu].uzer)
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].uzer)
         }
     }
 
     showConcreteDate = (nV, nObj) => {
         const namberVeu = ["finV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
-            return (this.props.veu.veu[nObj].[namberVeu].date)
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].date)
 
         }
     }
     //// Защита данных таблицы от перезаписи
     noRecordingBottom = (nV, nObj) => {
         const namberVeu = ["nV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
             return true
         } else return false
 
@@ -365,7 +365,7 @@ class Deviations extends Component {
 
     noRecordingStart = (nV, nObj) => {
         const namberVeu = ["sV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
             return true
         } else return false
 
@@ -373,7 +373,7 @@ class Deviations extends Component {
 
     noRecordingConcrete = (nV, nObj) => {
         const namberVeu = ["finV" + (nV + 1)]
-        if (this.props.veu.veu[nObj].[namberVeu] !== undefined) {
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
             return true
         } else return false
 
@@ -403,7 +403,7 @@ class Deviations extends Component {
                 <h1>Корзина(Низ)</h1>
                 <div className={classes.stringTable}>
                     <p>
-                        Опорный фланец:
+                        Опорн. фланец:
                         <strong>
                             {this.showBottomSupporting(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                         </strong>
@@ -411,7 +411,7 @@ class Deviations extends Component {
                 </div>
                 <div className={classes.stringTable}>
                     <p>
-                        Шаблонный фланец:
+                        Шабл. фланец:
                         <strong>
                             {this.showBottomTemplate(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                         </strong>
@@ -443,7 +443,7 @@ class Deviations extends Component {
                 </div>
                 <div className={this.state.cls1}>
                     <input onChange={this.handlerBottomSupporting} placeholder="Опорный фланец" />
-                    <input onChange={this.handlerBottomTemplate} placeholder="Шаблонный фланец" />
+                    <input onChange={this.handlerBottomTemplate} placeholder="Шабл. фланец" />
                     <input onChange={this.handlerBottomAnchor} placeholder="Анкер" />
                     <input onChange={this.handlerBottomUzer} placeholder="Исполнитель" />
                     <input onChange={this.handlerBottomDate} placeholder="Дата" />
@@ -496,7 +496,7 @@ class Deviations extends Component {
                 <h1>До Бетона</h1>
                 <div className={classes.stringTable}>
                     <p>
-                        Шаблонный фланец:
+                        Шабл. фланец:
                         <strong>
                             {this.showStartTemplate(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                         </strong>
@@ -528,7 +528,7 @@ class Deviations extends Component {
                 </div>
 
                 <div className={this.state.cls2}>
-                    <input onChange={this.handlerStartTemplate} placeholder="Шаблонный фланец" />
+                    <input onChange={this.handlerStartTemplate} placeholder="Шабл. фланец" />
                     <input onChange={this.handlerStartAnchor} placeholder="Анкер" />
                     <input onChange={this.handlerStartUzer} placeholder="Исполнитель" />
                     <input onChange={this.handlerStartDate} placeholder="Дата" />
@@ -578,7 +578,7 @@ class Deviations extends Component {
                 <h1>Бетонирование</h1>
                 <div className={classes.stringTable}>
                     <p>
-                        Шаблонный фланец:
+                        Шабл. фланец:
                         <strong>
                             {this.showConcreteTemplate(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                         </strong>
@@ -610,7 +610,7 @@ class Deviations extends Component {
                     </p>
                 </div>
                 <div className={this.state.cls3}>
-                    <input onChange={this.handlerConcreteTemplate} placeholder="Шаблонный фланец" />
+                    <input onChange={this.handlerConcreteTemplate} placeholder="Шабл. фланец" />
                     <input onChange={this.handlerConcreteAnchor} placeholder="Анкер" />
                     <input onChange={this.handlerConcreteUzer} placeholder="Исполнитель" />
                     <input onChange={this.handlerConcreteDate} placeholder="Дата" />

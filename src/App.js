@@ -4,6 +4,7 @@ import Layout from './hoc/Layout'
 import {Route, Switch} from 'react-router-dom'
 import VeuOptions from './page/VeuOptions/VeuOptions'
 import ParametersVeu from './page/ParametersVeu/ParametersVeu'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 

@@ -34,8 +34,8 @@ import LoaderSave from '../../../components/LoaderSave/LoaderSave'
 
     showContent = (indexVeu, indexObj, item) => {
         const XYH = ["XYH" + (indexVeu+1)]
-        if( this.props.veu[indexObj].[XYH] !== undefined ) {
-            return   (this.props.veu[indexObj].[XYH].[item])
+        if( this.props.veu[indexObj][XYH] !== undefined ) {
+            return   (this.props.veu[indexObj][XYH][item])
         }
     }
 
@@ -43,16 +43,16 @@ import LoaderSave from '../../../components/LoaderSave/LoaderSave'
 
     paymentPipes = (indexVeu, indexObj, excess) => {
         const XYH = ["XYH" + (indexVeu+1)]
-        if( this.props.veu[indexObj].[XYH] !== undefined ) {
-            let i = Number(this.props.veu[indexObj].[XYH].h) - excess
+        if( this.props.veu[indexObj][XYH] !== undefined ) {
+            let i = Number(this.props.veu[indexObj][XYH].h) - excess
             return i.toFixed(3)
         }
     }
 
     paymentAnchor = (indexVeu, indexObj, excess) => {
         const XYH = ["XYH" + (indexVeu+1)]
-        if( this.props.veu[indexObj].[XYH] !== undefined ) {
-            let i = Number(this.props.veu[indexObj].[XYH].h) + excess
+        if( this.props.veu[indexObj][XYH] !== undefined ) {
+            let i = Number(this.props.veu[indexObj][XYH].h) + excess
             return i.toFixed(4)
         }
     } 
@@ -61,7 +61,7 @@ import LoaderSave from '../../../components/LoaderSave/LoaderSave'
 
     noRecordingXYH = (nV, nObj) => {
         const namberVeu = ["XYH" + (nV + 1)]
-        if (this.props.veu[nObj].[namberVeu] !== undefined) {
+        if (this.props.veu[nObj][namberVeu] !== undefined) {
             return true
         } else return false
 

@@ -23,3 +23,23 @@
     color: #4d53eb;
     cursor: pointer;
 }
+
+.buttonHome {
+    position: fixed;
+    top: 600px;
+    left: 950px;
+
+}
+
+
+@media  (min-width: 300px) and (max-width: 800px) {
+    .buttonHome {
+        left: 250px;
+    }
+}
+
+@media  (min-width: 800px) and (max-width: 1400px) {
+    .buttonHome {
+        left: 650px;
+    }
+}

@@ -2,6 +2,7 @@ import classes from './VeuOptions.module.css'
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import VeuButton from '../../components/VeuButton/VeuButton'
+import ButtonToHome from "../../components/ButtonToHome/ButtonToHome";
 
 
 
@@ -23,8 +24,12 @@ class VeuOptions extends Component {
             <div className = {classes.VeuOptions}>
                 <div className={classes.Content}>
                     <h1>{this.props.name}</h1>
-                        {this.Createlist(this.props.veuItems)}  
+                        {this.Createlist(this.props.veuItems)}
                 </div>
+                <div className={classes.buttonHome}>
+                    <ButtonToHome/>
+                </div>
+
             </div>
         )
     }

@@ -6,6 +6,7 @@ import CreateNewObject from '../../components/CreateNewObject/CreateNewObject'
 import { CALL_MODEL_WINDOW, KEY_BASE_TO_STORE, BTN_OBJECT_DISABLED_OF} from '../../store/actions/actionTypes'
 import Loader from '../../components/Loader/Loader'
 import{initState} from '../../store/actions/initState'
+import {Button} from "react-bootstrap";
 
 
 
@@ -20,6 +21,7 @@ class Veu extends Component {
         checked: false
 
     }
+
 
 
     componentDidMount() {
@@ -59,6 +61,7 @@ class Veu extends Component {
         }
     }
 
+
     passwordHandler = () => {
         if (this.state.passwordUser === this.state.password) {
             this.props.btnObjectDisabledOf()
@@ -76,14 +79,16 @@ class Veu extends Component {
 
     render() {
         return (
-            <div className={classes.Veu}>
+            
+        <div className={classes.Veu}>
                 <h1>Выберите объект или создайте новый</h1>
-                <button
+                <Button
+                    variant={'success'}
                     className={this.props.btn_veu}
                     onClick={this.props.omWindowModal}
                 >
-                    +
-                 </button>
+                    <i className="fas fa-plus-circle"/>
+                 </Button>
                 <div className={classes.objectList}>
                     {
                         this.props.loading
@@ -131,6 +136,8 @@ class Veu extends Component {
         )
     }
 }
+
+
 
 function mapStateToProps(state) {
     return {

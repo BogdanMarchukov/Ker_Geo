@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8da0e910-1642-4896-89ae-458b1c785ab0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
+    <list default="true" id="8da0e910-1642-4896-89ae-458b1c785ab0" name="Default Changelist" comment="Add password to LocalStorage">
+      <change afterPath="$PROJECT_DIR$/src/components/ButtonToHome/ButtonToHome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ButtonToHome/ButtonToHome.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/VeuButton/VeuButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VeuButton/VeuButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/VeuButton/VeuButton.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VeuButton/VeuButton.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/objectButton/ObjectButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/objectButton/ObjectButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/objectButton/ObjectButton.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/objectButton/ObjectButton.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Veu/Veu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Veu/Veu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Veu/Veu.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Veu/Veu.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/ParametersVeu/Deviations/Deviations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/ParametersVeu/Deviations/Deviations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/veu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/veu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hoc/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/ParametersVeu/ParametersVeu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/ParametersVeu/ParametersVeu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/ParametersVeu/ParametersVeu.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/ParametersVeu/ParametersVeu.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/ParametersVeu/Pipes/Pipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/ParametersVeu/Pipes/Pipes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/VeuOptions/VeuOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/VeuOptions/VeuOptions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/VeuOptions/VeuOptions.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/VeuOptions/VeuOptions.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +30,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -39,9 +59,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -54,7 +78,17 @@
       <updated>1607340612696</updated>
       <workItem from="1607340616896" duration="48000" />
       <workItem from="1607340860277" duration="109000" />
+      <workItem from="1607580060717" duration="10005000" />
+      <workItem from="1607599794586" duration="13274000" />
     </task>
+    <task id="LOCAL-00001" summary="Add password to LocalStorage">
+      <created>1607448755627</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607448755627</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -75,5 +109,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add password to LocalStorage" />
     <option name="LAST_COMMIT_MESSAGE" value="Add password to LocalStorage" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,0 +1,23 @@
+.btn {
+    width: 100px;
+    height: 60px;
+    border-radius: 10px !important;
+    font-size: 30px !important;
+
+}
+/*@media  (min-width: 300px) and (max-width: 800px) {*/
+/*    .btn {*/
+/*        left: 250px;*/
+/*    }*/
+/*}*/
+
+/*@media  (min-width: 800px) and (max-width: 1400px) {*/
+/*    .btn {*/
+/*        left: 650px;*/
+/*    }*/
+/*}*/
+
+
+
+
+

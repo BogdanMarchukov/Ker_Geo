@@ -3,6 +3,7 @@ import classes from './ObjectButton.module.css'
 import {NavLink} from 'react-router-dom'
 import { connect } from 'react-redux';
 import {OPEN_OBJECT} from '../../store/actions/actionTypes'
+import {Button} from "react-bootstrap";
 
 
 
@@ -13,7 +14,8 @@ const ObjectButton = props => {
         return (
             <div className={classes.ObjectButton}>
                 <NavLink to="veu-options">
-                    <button
+                    <Button
+                        variant={'warning'}
                         disabled={props.disabled}
                         onClick={() => {
                             props.totallItem(props)
@@ -21,12 +23,12 @@ const ObjectButton = props => {
                         }
 
                         }
-                    
+
                     >
                         <p>{props.name}</p>
-                    </button>
+                    </Button>
                 </NavLink>
-                
+
             </div>
 
            

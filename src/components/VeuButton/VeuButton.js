@@ -3,16 +3,19 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import classes from './VeuButton.module.css'
 import{CREATE_ACTIV_INDEX_VEU} from '../../store/actions/actionTypes'
+import {Button} from "react-bootstrap";
 
 const VeuButton = props => {
     return (
         <div className={classes.VeuButton}>
             <NavLink to = "parametrse">
-                <button onClick={()=>{
+                <Button
+                    variant={'warning'}
+                    onClick={()=>{
                     props.clickHandler(props.indexVeu)
                 }}>
                     ВЭУ-{props.name}
-                </button>
+                </Button>
             </NavLink>
         </div>
     );

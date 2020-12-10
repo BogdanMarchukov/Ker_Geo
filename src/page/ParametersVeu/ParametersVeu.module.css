@@ -7,23 +7,17 @@
     flex-wrap: wrap;
 }
 
-.buttonHome {
-    position: fixed;
-    top: 500px;
-    left: 980px;
-
-}
 
 
 @media  (min-width: 300px) and (max-width: 800px) {
     .buttonHome {
+        position: fixed !important;
         top: 600px;
         left: 250px;
     }
 }
-
-@media  (min-width: 800px) and (max-width: 1400px) {
+@media (min-width: 800px) {
     .buttonHome {
-        left: 650px;
+        display: none;
     }
 }

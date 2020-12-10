@@ -87,7 +87,7 @@ class Veu extends Component {
                     className={this.props.btn_veu}
                     onClick={this.props.omWindowModal}
                 >
-                    <i className="fas fa-plus-circle"/>
+                    <p>+</p>
                  </Button>
                 <div className={classes.objectList}>
                     {

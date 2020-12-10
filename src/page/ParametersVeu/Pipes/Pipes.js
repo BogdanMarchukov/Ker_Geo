@@ -4,6 +4,7 @@ import classes from './Pipes.module.css'
 import { SAVE_X_Y_H_TO_STORE } from '../../../store/actions/actionTypes'
 import {saveUpdatesObjectToBase} from '../../../store/actions/pipes'
 import LoaderSave from '../../../components/LoaderSave/LoaderSave'
+import ButtonToHome from "../../../components/ButtonToHome/ButtonToHome";
 
  class Pipes extends Component {
 
@@ -202,6 +203,9 @@ import LoaderSave from '../../../components/LoaderSave/LoaderSave'
                     ? <LoaderSave startLoad = {this.props.startLoad}/>
                     : null
                     }
+                <div className={classes.buttonHome}>
+                    <ButtonToHome/>
+                </div>
             </div>
         );
     }

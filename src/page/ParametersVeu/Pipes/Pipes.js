@@ -62,7 +62,7 @@ import ButtonToHome from "../../../components/ButtonToHome/ButtonToHome";
 
     noRecordingXYH = (nV, nObj) => {
         const namberVeu = ["XYH" + (nV + 1)]
-        if (this.props.veu[nObj][namberVeu] !== undefined) {
+        if (this.props.veu[nObj][namberVeu] !== undefined || this.props.offline === true) {
             return true
         } else return false
 
@@ -217,7 +217,8 @@ function mapStateToProps(state) {
         activ: state.imemVeu,
         veu: state.veu.veu,
         startLoadXYH: state.cls.startLoadXYH,
-        startLoad: state.cls.startLoad
+        startLoad: state.cls.startLoad,
+        offline: state.cls.offline
     }
 }
 

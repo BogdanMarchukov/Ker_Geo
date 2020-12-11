@@ -7,6 +7,7 @@ import { CALL_MODEL_WINDOW, KEY_BASE_TO_STORE, BTN_OBJECT_DISABLED_OF} from '../
 import Loader from '../../components/Loader/Loader'
 import{initState} from '../../store/actions/initState'
 import {Button} from "react-bootstrap";
+import OfflineInput from "../../components/OfflineInput/OfflineInput";
 
 
 
@@ -25,8 +26,10 @@ class Veu extends Component {
 
 
     componentDidMount() {
-        this.props.initState()
         this.readPassword()
+        if (this.props.offline === false) {
+            this.props.initState()
+        }
     }
 
     inputHandler = (event) => {
@@ -78,11 +81,14 @@ class Veu extends Component {
 
 
     render() {
+
         return (
-            
+
         <div className={classes.Veu}>
+            <OfflineInput/>
                 <h1>Выберите объект или создайте новый</h1>
                 <Button
+                    disabled={this.props.offline}
                     variant={'success'}
                     className={this.props.btn_veu}
                     onClick={this.props.omWindowModal}
@@ -140,10 +146,12 @@ class Veu extends Component {
 
 
 function mapStateToProps(state) {
+
     return {
         veu: state.veu.veu,
         btn_veu: state.cls.btn,
-        loading: state.veu.loading
+        loading: state.veu.loading,
+        offline: state.cls.offline
 
     }
 

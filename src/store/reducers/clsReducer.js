@@ -8,7 +8,8 @@ const initialState = {
     startLoadBottom: false,
     startLoadStart: false,
     startLoadConcrete: false,
-    startLoadXYH: false
+    startLoadXYH: false,
+    offline: false
 }
 
 export default function clsReducer(state = initialState, action) {
@@ -23,7 +24,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoadBottom: state.startLoadBottom,
                 startLoadStart: state.startLoadStart,
                 startLoadConcrete: state.startLoadConcrete,
-                startLoadXYH: state.startLoadXYH
+                startLoadXYH: state.startLoadXYH,
+                offline: state.offline
             }
         case 'CLOSE_WINDOW':
             return {
@@ -35,7 +37,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoadBottom: state.startLoadBottom,
                 startLoadStart: state.startLoadStart,
                 startLoadConcrete: state.startLoadConcrete,
-                startLoadXYH: state.startLoadXYH
+                startLoadXYH: state.startLoadXYH,
+                offline: state.offline
             }
         case 'BTN_OBJECT_DISABLED_OF':
             return {
@@ -47,7 +50,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoadBottom: state.startLoadBottom,
                 startLoadStart: state.startLoadStart,
                 startLoadConcrete: state.startLoadConcrete,
-                startLoadXYH: state.startLoadXYH
+                startLoadXYH: state.startLoadXYH,
+                offline: state.offline
             }
         case 'START_SAVE_TO_BASE_BOTTOM':
             return {
@@ -59,7 +63,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoadBottom: true,
                 startLoadStart: false,
                 startLoadConcrete: false,
-                startLoadXYH: false
+                startLoadXYH: false,
+                offline: state.offline
             }
         case 'START_SAVE_TO_BASE_START':
             return {
@@ -71,7 +76,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoad: true,
                 startLoadBottom: false,
                 startLoadConcrete: false,
-                startLoadXYH: false
+                startLoadXYH: false,
+                offline: state.offline
 
             }
         case 'START_SAVE_TO_BASE_CONCRETE':
@@ -84,7 +90,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoad: true,
                 startLoadBottom: false,
                 startLoadConcrete: true,
-                startLoadXYH: false
+                startLoadXYH: false,
+                offline: state.offline
 
             }
         case 'START_SAVE_TO_BASE_XYH':
@@ -97,7 +104,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoad: true,
                 startLoadBottom: false,
                 startLoadConcrete: false,
-                startLoadXYH: true
+                startLoadXYH: true,
+                offline: state.offline
 
             }
         case 'FINISH_SAVE_TO_BASE':
@@ -110,7 +118,8 @@ export default function clsReducer(state = initialState, action) {
                 startLoadBottom: state.startLoadBottom,
                 startLoadStart: state.startLoadStart,
                 startLoadConcrete: state.startLoadConcrete,
-                startLoadXYH: state.startLoadXYH
+                startLoadXYH: state.startLoadXYH,
+                offline: state.offline
             }
         case 'CREATE_ACTIV_INDEX_VEU':
             return {
@@ -122,7 +131,15 @@ export default function clsReducer(state = initialState, action) {
                 startLoadBottom: true,
                 startLoadStart: true,
                 startLoadConcrete: true,
-                startLoadXYH: true
+                startLoadXYH: true,
+                offline: state.offline
+            }
+        case 'INPUT_OFFLINE':
+            return {
+                ...state,
+                offline: !state.offline
+
+
             }
 
 

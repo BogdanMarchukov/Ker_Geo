@@ -387,7 +387,7 @@ class Deviations extends Component {
             seveItem = this.props.veu.veu[indx]
         try {
             await Axios.patch(`https://geo-ker.firebaseio.com/veu/${key}.json`, seveItem)
-           
+
         } catch (e) {
             alert(e)
         }
@@ -396,8 +396,7 @@ class Deviations extends Component {
 
 
     render() {
-        console.log(this.props.startLoadStart)
-       
+
         return (
             <div className={classes.Deviations}>
                 <h1>Корзина(Низ)</h1>
@@ -470,7 +469,7 @@ class Deviations extends Component {
                             saveBottom: classes.none
                         })
                         this.props.saveToBase(
-                            this.props.activ, this.props.veu.veu[this.props.activ.activIndex], "Bottom"
+                            this.props.activ, this.props.veu.veu[this.props.activ.activIndex], "Bottom", this.props.offline
                         )
                 }} 
                                 
@@ -554,7 +553,7 @@ class Deviations extends Component {
                             saveStart: classes.none
                         })
                         this.props.saveToBase(
-                            this.props.activ, this.props.veu.veu[this.props.activ.activIndex], "Start"
+                            this.props.activ, this.props.veu.veu[this.props.activ.activIndex], "Start", this.props.offline
                         )
                 }} 
                                 
@@ -636,7 +635,7 @@ class Deviations extends Component {
                             SaveConcrete: classes.none
                         })
                         this.props.saveToBase(
-                            this.props.activ, this.props.veu.veu[this.props.activ.activIndex], "Concrete"
+                            this.props.activ, this.props.veu.veu[this.props.activ.activIndex], "Concrete", this.props.offline
                         )
                 }} 
                                 
@@ -663,14 +662,15 @@ class Deviations extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state.cls.startLoadBottom)
+
     return {
         activ: state.imemVeu,
         veu: state.veu,
         startLoad: state.cls.startLoad,
         startLoadBottom: state.cls.startLoadBottom,
         startLoadStart: state.cls.startLoadStart,
-        startLoadConcrete: state.cls.startLoadConcrete
+        startLoadConcrete: state.cls.startLoadConcrete,
+        offline: state.cls.offline
 
     }
 }
@@ -680,7 +680,7 @@ function mapDispatchToProps(dispatch) {
         saveToStoreBottom: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_BOTTOM, activ, infoVeu }),
         saveToStoreStart: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_START, activ, infoVeu }),
         saveToStoreConcrete: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_CONCRETE, activ, infoVeu }),
-        saveToBase: (activ, save, item) => dispatch(saveToBase(activ, save, item))
+        saveToBase: (activ, save, item, offline) => dispatch(saveToBase(activ, save, item, offline))
 
     }
 }

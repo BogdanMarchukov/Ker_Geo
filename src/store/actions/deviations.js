@@ -6,23 +6,31 @@ import {
     START_SAVE_TO_BASE_CONCRETE
 } from './actionTypes'
 
-export function saveToBase(activ, save, item) {
+export function saveToBase(activ, save, item, offline) {
     return async dispatch => {
-        if (item === "Bottom") {
+        if (item === "Bottom" && offline === false) {
             dispatch(startSaveBottom())
-        } if (item === "Start") {
+        } if (item === "Start" && offline === false) {
             dispatch(startSaveStart())
-        } if (item === "Concrete") {
+        } if (item === "Concrete" && offline === false) {
             dispatch(startSaveConcrete())
+        } if (offline === false) {
+            const indx = activ.activIndex,
+                key = activ.id[indx]
+            try {
+                await Axios.patch(`https://geo-ker.firebaseio.com/veu/${key}.json`, save)
+                dispatch(finishSave())
+            } catch (e) {
+                alert(e)
+            }
+        } else if (offline === true) {
+            const indx = activ.activIndex,
+                key = activ.id[indx]
+            localStorage.setItem('key', key.toString())
+            localStorage.setItem('save', JSON.stringify(save))
+            alert('Сохраннено локально')
         }
-        const indx = activ.activIndex,
-            key = activ.id[indx]
-        try {
-            await Axios.patch(`https://geo-ker.firebaseio.com/veu/${key}.json`, save)
-            dispatch(finishSave())
-        } catch (e) {
-            alert(e)
-        }
+
     }
 }
 
@@ -45,7 +53,7 @@ export function startSaveConcrete() {
 }
 
 export function finishSave() {
-    console.log("Finish")
+
     return {
         type: FINISH_SAVE_TO_BASE
     }

@@ -2,6 +2,7 @@ import Axios from 'axios'
 import {START_INIT_TO_STORE, FINISH_INIT_TO_STORE} from './actionTypes'
 
 export function initState() {
+
     return async dispatch => {
         dispatch(startInit())
        try {
@@ -9,7 +10,7 @@ export function initState() {
             const veuBase = []
             const name = []
             Object.keys(response.data).forEach((key) => {
-                veuBase.push(response.data.[key])
+                veuBase.push(response.data[key])
                 name.push(key)
             })
             dispatch(FinishInit(veuBase, name))
@@ -32,3 +33,4 @@ export function FinishInit(veuBase, key) {
         key
     }
 }
+

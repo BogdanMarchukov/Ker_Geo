@@ -1,0 +1,13 @@
+.OfflineInput {
+    z-index: 500;
+}
+
+.OfflineInput label {
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.OfflineInput input {
+    width: 20px;
+    height: 20px;
+}

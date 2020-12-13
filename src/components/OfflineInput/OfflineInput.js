@@ -1,21 +1,29 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {INPUT_OFFLINE} from "../../store/actions/actionTypes";
 import {Container, Row, Col} from "react-bootstrap";
 import classes from "./OfflineInput.module.css"
 import {initState} from "../../store/actions/initState";
+import {inputHandler, saveOfflineToBase} from "../../store/actions/offlineInput";
 
 
 class OfflineInput extends Component {
 
     inputChange = () => {
-        if (this.props.offline === false) {
+        const key = localStorage.getItem('key')
+        const save = JSON.parse(localStorage.getItem('save'))
+        if (key != null) {
+            this.props.saveOfflineToBase(key, save)
+        }
+
+        if (this.props.offline === false && key === null) {
             this.props.inputHandler()
-        } else if (this.props.offline === true) {
+        } else if (this.props.offline === true && key === null) {
             this.props.inputHandler()
             this.props.initState()
         }
     }
+
+
 
     render() {
         return (
@@ -47,8 +55,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        inputHandler: () => dispatch({type: INPUT_OFFLINE}),
-        initState: () => dispatch(initState())
+        inputHandler: () => dispatch(inputHandler()),
+        initState: () => dispatch(initState()),
+        saveOfflineToBase: (key, save) => dispatch(saveOfflineToBase(key, save))
     };
 }
 

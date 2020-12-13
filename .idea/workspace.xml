@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8da0e910-1642-4896-89ae-458b1c785ab0" name="Default Changelist" comment="Add Button to Home + fixed">
-      <change afterPath="$PROJECT_DIR$/src/components/OfflineInput/OfflineInput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OfflineInput/OfflineInput.module.css" afterDir="false" />
+    <list default="true" id="8da0e910-1642-4896-89ae-458b1c785ab0" name="Default Changelist" comment="Add mode offline">
+      <change afterPath="$PROJECT_DIR$/src/store/actions/offlineInput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Veu/Veu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Veu/Veu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/ParametersVeu/Deviations/Deviations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/ParametersVeu/Deviations/Deviations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/ParametersVeu/Pipes/Pipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/ParametersVeu/Pipes/Pipes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OfflineInput/OfflineInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OfflineInput/OfflineInput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/deviations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/deviations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/initState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/initState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/clsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/clsReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +65,9 @@
       <workItem from="1607340860277" duration="109000" />
       <workItem from="1607580060717" duration="10005000" />
       <workItem from="1607599794586" duration="23976000" />
-      <workItem from="1607667271691" duration="22907000" />
+      <workItem from="1607667271691" duration="23016000" />
+      <workItem from="1607765374350" duration="1586000" />
+      <workItem from="1607857502173" duration="8090000" />
     </task>
     <task id="LOCAL-00001" summary="Add password to LocalStorage">
       <created>1607448755627</created>
@@ -93,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607626162244</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add mode offline">
+      <created>1607716179730</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607716179730</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,7 +119,8 @@
     <MESSAGE value="Add password to LocalStorage" />
     <MESSAGE value="Add Button to Home" />
     <MESSAGE value="Add Button to Home + fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Button to Home + fixed" />
+    <MESSAGE value="Add mode offline" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add mode offline" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

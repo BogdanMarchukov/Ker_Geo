@@ -28,7 +28,7 @@ export function saveToBase(activ, save, item, offline) {
                 key = activ.id[indx]
             localStorage.setItem('key', key.toString())
             localStorage.setItem('save', JSON.stringify(save))
-            alert('Сохраннено локально')
+
         }
 
     }

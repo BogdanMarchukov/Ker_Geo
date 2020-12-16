@@ -5,6 +5,7 @@ import {Route, Switch} from 'react-router-dom'
 import VeuOptions from './page/VeuOptions/VeuOptions'
 import ParametersVeu from './page/ParametersVeu/ParametersVeu'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Lot from "./page/Lot/Lot";
 
 
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" exact={true} component= {Veu}/>
         <Route path="/veu-options" component= {VeuOptions}/>
         <Route path="/parametrse" component= {ParametersVeu}/>
+        <Route path="/lot" component= {Lot}/>
       </Switch>
     </Layout>
   );

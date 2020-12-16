@@ -9,6 +9,7 @@ import {inputHandler, saveOfflineToBase} from "../../store/actions/offlineInput"
 class OfflineInput extends Component {
 
     inputChange = () => {
+        // TODO Убрать лоадер со страниццы в режими оффлайн
         const key = localStorage.getItem('key')
         const save = JSON.parse(localStorage.getItem('save'))
         if (key != null) {

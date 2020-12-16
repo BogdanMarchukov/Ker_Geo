@@ -20,12 +20,21 @@ class Drawer extends Component {
                 <nav className={cls.join(" ")}>
                     <ul>
                         <li>
-                        <NavLink
-                            to="/"
-                            activeClassName = {classes.active}
-                            onClick = {this.clickHandler}
-                        >
-                            Главная
+                            <NavLink
+                                to="/"
+                                activeClassName={classes.active}
+                                onClick={this.clickHandler}
+                            >
+                                Главная
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/lot"
+                                activeClassName={classes.active}
+                                onClick={this.clickHandler}
+                            >
+                                Жребий
                             </NavLink>
                         </li>
                     </ul>           

@@ -1,0 +1,13 @@
+.openMenu, .close {
+    position: fixed;
+    right: 270px;
+    top: 200px;
+    font-size: 40px;
+    color: red;
+    transform: translateX(0px);
+    transition: transform 0.5s ease;
+}
+
+.close {
+    transform: translateX(230px);
+}

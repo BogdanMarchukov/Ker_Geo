@@ -8,7 +8,7 @@
     padding: 20px 10px;
     box-sizing: border-box;
     background: #fff;
-    z-index: 200;
+    z-index: 800;
     transform: translateX(0px);
     transition: transform .22s ease-in;
 }

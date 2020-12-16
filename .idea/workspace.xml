@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8da0e910-1642-4896-89ae-458b1c785ab0" name="Default Changelist" comment="Add mode offline">
-      <change afterPath="$PROJECT_DIR$/src/store/actions/offlineInput.js" afterDir="false" />
+    <list default="true" id="8da0e910-1642-4896-89ae-458b1c785ab0" name="Default Changelist" comment="Add mode offline - finish">
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/Lot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/Lot.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/ActivLot/ActivLot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/ActivLot/ActivLot.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/ContextMenuToggle/ContextMenuToggle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/CreateNewLot/CreateNewLot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/CreateNewLot/CreateNewLot.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/LotMenuToggle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/LotMenuToggle.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/Registration/Registration.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/Registration/Registration.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/Statistics/Statistics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/Statistics/Statistics.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/Toggle/Toggle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/Toggle/Toggle.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Backdrop/Backdrop.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Backdrop/Backdrop.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/OfflineInput/OfflineInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OfflineInput/OfflineInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/deviations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/deviations.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +69,13 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Богдан\Desktop\Ker_Geo\ker_geo\src\page\Lot\LotMenuToggle" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -67,7 +91,10 @@
       <workItem from="1607599794586" duration="23976000" />
       <workItem from="1607667271691" duration="23016000" />
       <workItem from="1607765374350" duration="1586000" />
-      <workItem from="1607857502173" duration="8090000" />
+      <workItem from="1607857502173" duration="9472000" />
+      <workItem from="1607966046888" duration="1576000" />
+      <workItem from="1608017856620" duration="14896000" />
+      <workItem from="1608103482875" duration="24725000" />
     </task>
     <task id="LOCAL-00001" summary="Add password to LocalStorage">
       <created>1607448755627</created>
@@ -97,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607716179730</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add mode offline - finish">
+      <created>1607870455172</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607870455172</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,7 +154,8 @@
     <MESSAGE value="Add Button to Home" />
     <MESSAGE value="Add Button to Home + fixed" />
     <MESSAGE value="Add mode offline" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add mode offline" />
+    <MESSAGE value="Add mode offline - finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add mode offline - finish" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

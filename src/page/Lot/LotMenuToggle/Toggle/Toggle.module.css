@@ -1,7 +1,7 @@
 .openMenu, .close {
     position: fixed;
     right: 270px;
-    top: 200px;
+    top: 147px;
     font-size: 40px;
     color: red;
     transform: translateX(0px);

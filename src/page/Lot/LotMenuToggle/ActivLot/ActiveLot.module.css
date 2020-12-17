@@ -1,0 +1,10 @@
+.ActiveLot ul li {
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+    transition: color 0.5s;
+}
+
+.ActiveLot ul li:hover {
+    color: green;
+}

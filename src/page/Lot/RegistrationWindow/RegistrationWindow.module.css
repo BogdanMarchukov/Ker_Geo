@@ -1,0 +1,34 @@
+.window {
+    margin-top: 200px;
+    width: 270px;
+    height: 180px;
+    background: white;
+    border: solid black;
+    border-radius: 8px;
+}
+
+.window label  {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px auto;
+}
+
+.window input {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+}
+
+.btn button {
+    font-size: 12px;
+}
+
+.btn1 {
+    margin-right: 7px;
+}

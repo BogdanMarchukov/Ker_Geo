@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8da0e910-1642-4896-89ae-458b1c785ab0" name="Default Changelist" comment="Add component Lot">
-      <change afterPath="$PROJECT_DIR$/src/page/Lot/RegistrationWindow/RegistrationWindow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/Lot/RegistrationWindow/RegistrationWindow.module.css" afterDir="false" />
+    <list default="true" id="8da0e910-1642-4896-89ae-458b1c785ab0" name="Default Changelist" comment="18.12.2020- finish component registration">
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/Entrance/Entrance.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/Entrance/Entrance.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/Username/Username.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/Username/Username.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/Lot/Lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/Lot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/ActivLot/ActivLot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/ActivLot/ActiveLot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/ActivLot/ActivLot.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/ActivLot/ActiveLot.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/ContextMenuToggle/ContextMenuToggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/ContextMenuToggle/ContextMenuToggle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/LotMenuToggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/LotMenuToggle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/Registration/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/Registration/Registration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/Toggle/Toggle.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/Toggle/Toggle.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +79,8 @@
       <workItem from="1607966046888" duration="1576000" />
       <workItem from="1608017856620" duration="14896000" />
       <workItem from="1608103482875" duration="24980000" />
-      <workItem from="1608188735979" duration="20402000" />
+      <workItem from="1608188735979" duration="21443000" />
+      <workItem from="1608277012345" duration="17990000" />
     </task>
     <task id="LOCAL-00001" summary="Add password to LocalStorage">
       <created>1607448755627</created>
@@ -127,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608147013879</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="18.12.2020- finish component registration">
+      <created>1608230258329</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608230258329</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +156,8 @@
     <MESSAGE value="Add mode offline" />
     <MESSAGE value="Add mode offline - finish" />
     <MESSAGE value="Add component Lot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add component Lot" />
+    <MESSAGE value="18.12.2020- finish component registration" />
+    <option name="LAST_COMMIT_MESSAGE" value="18.12.2020- finish component registration" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

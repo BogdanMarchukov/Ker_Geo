@@ -13,6 +13,7 @@ export const MenuProvider = ({children}) => {
     const [cls, setCls] = useState('openMenu') // state Menu
     const [icon, setIcon] = useState("fas fa-chevron-right") // state toggle
     const [registration, setRegistration] = useState(false) // state Registration
+    const [activeUser, setActiveUser] = useState('Вход не выполнен') // активный пользователь
 
     // функция открытия/закрытия меню-жребий
     const toggle = () => setCls(prevState => {
@@ -26,6 +27,7 @@ export const MenuProvider = ({children}) => {
         }
     })
 
+
     // Функция открытие/закрытия окна регистрации
     const openReg = () => setRegistration(prevState => !prevState)
 
@@ -36,6 +38,7 @@ export const MenuProvider = ({children}) => {
 
     // сохранения данных inputName в переменную
     const inputNameHandler = event => name = event.target.value
+
 
     // сохранения данных inputPassword в переменную
     const inputPasswordHandler = event => password = event.target.value
@@ -48,13 +51,33 @@ export const MenuProvider = ({children}) => {
             user.password = password
             try {
                 openReg()
-                await Axios.post('https://geo-ker.firebaseio.com/lot.json', user)
+                const response = await Axios.post('https://geo-ker.firebaseio.com/lot/user.json', user)
+                localStorage.setItem('user', response.data.name)
+                setActiveUser(name)
+
             } catch (e) {
                 console.log(e)
             }
         }
 
     }
+
+    // инициализация пользователя
+    const initUser = async () => {
+        let key = localStorage.getItem('user')
+
+        if (key !== null) {
+            try {
+                const responsive = await Axios.get(`https://geo-ker.firebaseio.com/lot/user/${key}.json`)
+                setActiveUser(responsive.data.name)
+            } catch (e) {
+                alert(e)
+            }
+        }
+
+    }
+
+
 
 
     return (
@@ -66,7 +89,9 @@ export const MenuProvider = ({children}) => {
             openReg,
             registrationDate,
             inputNameHandler,
-            inputPasswordHandler
+            inputPasswordHandler,
+            activeUser,
+            initUser
 
         }}>
             {children}

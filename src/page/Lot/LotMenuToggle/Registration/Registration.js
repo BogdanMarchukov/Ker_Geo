@@ -4,10 +4,12 @@ import {useMenu} from "../ContextMenuToggle/ContextMenuToggle";
 
 const Registration = () => {
     const {openReg} = useMenu()
+    const {openLogin} = useMenu()
     return (
         <Row>
             <Col xs={4}>
                 <Button
+                    onClick={openLogin}
                     variant='success'
                 >
                     Вход

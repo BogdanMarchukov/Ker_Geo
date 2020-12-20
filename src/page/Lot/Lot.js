@@ -5,6 +5,8 @@ import Toggle from "./LotMenuToggle/Toggle/Toggle";
 import {MenuProvider} from "./LotMenuToggle/ContextMenuToggle/ContextMenuToggle";
 import RegistrationWindow from "./RegistrationWindow/RegistrationWindow";
 import Username from "./Username/Username";
+import Login from "./Login/Login";
+import {LotProvider} from "./ContextLot/ContextLot";
 
 
 const Lot = () => {
@@ -13,9 +15,13 @@ const Lot = () => {
         <div className={classes.lot}>
             <MenuProvider>
                 <Username/>
-                <LotMenuToggle/>
                 <Toggle/>
                 <RegistrationWindow/>
+                <Login/>
+
+                <LotProvider>
+                    <LotMenuToggle/>
+                </LotProvider>
             </MenuProvider>
         </div>
     );

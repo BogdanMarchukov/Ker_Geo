@@ -7,6 +7,8 @@ import RegistrationWindow from "./RegistrationWindow/RegistrationWindow";
 import Username from "./Username/Username";
 import Login from "./Login/Login";
 import {LotProvider} from "./ContextLot/ContextLot";
+import Timer from "./Timer/Timer";
+import LotProcessing from "./LotProcessing/LotProcessing";
 
 
 const Lot = () => {
@@ -21,6 +23,8 @@ const Lot = () => {
 
                 <LotProvider>
                     <LotMenuToggle/>
+                    <Timer/>
+                    <LotProcessing/>
                 </LotProvider>
             </MenuProvider>
         </div>

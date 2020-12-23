@@ -8,3 +8,7 @@
 .ActiveLot ul li:hover {
     color: green;
 }
+
+.ActiveLot button {
+    margin-left: 45px;
+}

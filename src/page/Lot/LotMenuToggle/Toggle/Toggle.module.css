@@ -1,8 +1,9 @@
 .openMenu, .close {
     position: fixed;
     right: 270px;
-    top: 147px;
+    top: 400px;
     font-size: 40px;
+    z-index: 300;
     color: red;
     transform: translateX(0px);
     transition: transform 0.5s ease;

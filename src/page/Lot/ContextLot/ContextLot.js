@@ -13,7 +13,10 @@ export const LotProvider = ({children}) => {
     const [itemsActiveLot, setItemsActiveLot] = useState([]) // список активных споров
     const [timer, setTimer] = useState(null) // таймер обратного отсчета
     const [fetchUsers, setFetchUsers] = useState([]) // список участников спора
-    const [userNumber, setUserNumber] = useState(0)
+    const [userNumber, setUserNumber] = useState(0) // выброшенное число
+    const [showProcessing, setShowProcessing] = useState(false) // показать/убрать процесс жребья
+    const [chance, setChance] = useState(3) // колличество попыток
+    const [showResult, setShowResult] = useState(true) // показать итог жребия // TODO изменить на false
 
     // сздание нового жребия
     const {activeUser} = useMenu()
@@ -58,6 +61,7 @@ export const LotProvider = ({children}) => {
         } else if (timer === 0) {
             setTimer(null)
             deleteActionLot()
+            setShowProcessing(true)
         }
     }, [timer])
 
@@ -83,6 +87,14 @@ export const LotProvider = ({children}) => {
     const randomNumber = () => {
         let number = Math.ceil(Math.random() * 100)
         setUserNumber(number)
+        setChance(prevState => prevState - 1)
+    }
+        // блокировка кнопки Выбросить число
+    const disabledButton = () => {
+        if (chance === 0) {
+            return true
+        }
+        else return false
     }
 
 
@@ -95,7 +107,11 @@ export const LotProvider = ({children}) => {
             timer,
             fetchUsers,
             userNumber,
-            randomNumber
+            randomNumber,
+            showProcessing,
+            chance,
+            disabledButton,
+            showResult
         }}
 
         >

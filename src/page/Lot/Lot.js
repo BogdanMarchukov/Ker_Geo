@@ -9,6 +9,7 @@ import Login from "./Login/Login";
 import {LotProvider} from "./ContextLot/ContextLot";
 import Timer from "./Timer/Timer";
 import LotProcessing from "./LotProcessing/LotProcessing";
+import ResultLot from "./ResultLot/ResultLot";
 
 
 const Lot = () => {
@@ -25,6 +26,7 @@ const Lot = () => {
                     <LotMenuToggle/>
                     <Timer/>
                     <LotProcessing/>
+                    <ResultLot/>
                 </LotProvider>
             </MenuProvider>
         </div>

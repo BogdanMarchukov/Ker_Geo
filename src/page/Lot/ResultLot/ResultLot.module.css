@@ -1,0 +1,25 @@
+.ResultLot  {
+    position: relative;
+    top: 70px;
+    text-align: center;
+
+}
+
+.ResultLot h1 strong {
+    color: #f60707;
+}
+
+.ResultLot ol li {
+    margin-top: 10px;
+    width: 100%;
+    text-align: left;
+    font-size: 25px;
+}
+
+.ResultLot ol {
+    margin-top: 40px;
+}
+.ResultLot button {
+    font-size: 25px;
+    margin-top: 20px;
+}

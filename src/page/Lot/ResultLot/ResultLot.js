@@ -5,15 +5,15 @@ import {useLot} from "../ContextLot/ContextLot";
 
 const ResultLot = () => {
     const {showResult} = useLot()
+    const {resultList} = useLot()
+    const {winner} = useLot()
 
     if (showResult === true) {
         return (
             <Container className={classes.ResultLot}>
-                <h1>Поздравляем: <strong>Богдан</strong> : 100</h1>
+                <h1>Поздравляем: <strong>{winner}</strong></h1>
                 <ol>
-                    <li>Богдан- 100</li>
-                    <li>Юра - 87</li>
-                    <li>Галя - 65</li>
+                    {resultList}
                 </ol>
                 <Button
                     variant={"warning"}

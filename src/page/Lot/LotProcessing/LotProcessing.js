@@ -10,6 +10,7 @@ const LotProcessing = () => {
     const {showProcessing} = useLot()
     const {chance} = useLot()
     const {disabledButton} = useLot()
+    const {saveRezolve} = useLot()
 
 
 
@@ -19,6 +20,7 @@ const LotProcessing = () => {
                 <Row>
                     <Col xs={3}>
                         <Button
+                            onClick={saveRezolve}
                             className={classes.btn}
                             variant={"success"}
                         >

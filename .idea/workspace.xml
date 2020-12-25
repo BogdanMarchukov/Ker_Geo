@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8da0e910-1642-4896-89ae-458b1c785ab0" name="Default Changelist" comment="add function random number">
-      <change afterPath="$PROJECT_DIR$/src/page/Lot/ResultLot/ResultLot.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/Lot/ResultLot/ResultLot.module.css" afterDir="false" />
+    <list default="true" id="8da0e910-1642-4896-89ae-458b1c785ab0" name="Default Changelist" comment="23.12.2020">
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/WaitingForUsers/WaitingForUsers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Lot/WaitingForUsers/WaitingForUsers.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/Lot/ContextLot/ContextLot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/ContextLot/ContextLot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/Lot/Lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/Lot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Lot/Lot.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/Lot.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/Lot/LotProcessing/LotProcessing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/LotProcessing/LotProcessing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Lot/ResultLot/ResultLot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/ResultLot/ResultLot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Lot/ResultLot/ResultLot.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/ResultLot/ResultLot.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +86,9 @@
       <workItem from="1608277012345" duration="18217000" />
       <workItem from="1608456428770" duration="19540000" />
       <workItem from="1608621756237" duration="15800000" />
-      <workItem from="1608703957597" duration="21764000" />
+      <workItem from="1608703957597" duration="21895000" />
+      <workItem from="1608808267653" duration="12574000" />
+      <workItem from="1608879167455" duration="13795000" />
     </task>
     <task id="LOCAL-00001" summary="Add password to LocalStorage">
       <created>1607448755627</created>
@@ -154,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608729350384</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="23.12.2020">
+      <created>1608754574868</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1608754574868</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +196,8 @@
     <MESSAGE value="add component Username- status 'finish'" />
     <MESSAGE value="21.12.2020" />
     <MESSAGE value="add function random number" />
-    <option name="LAST_COMMIT_MESSAGE" value="add function random number" />
+    <MESSAGE value="23.12.2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="23.12.2020" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

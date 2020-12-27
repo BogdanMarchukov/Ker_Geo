@@ -7,6 +7,7 @@ const ResultLot = () => {
     const {showResult} = useLot()
     const {resultList} = useLot()
     const {winner} = useLot()
+    const {endLot} = useLot()
 
     if (showResult === true) {
         return (
@@ -16,6 +17,7 @@ const ResultLot = () => {
                     {resultList}
                 </ol>
                 <Button
+                    onClick={endLot}
                     variant={"warning"}
                 >
                     Завершить

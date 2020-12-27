@@ -4,7 +4,7 @@ import {useMenu} from "./ContextMenuToggle/ContextMenuToggle";
 import {Container} from "react-bootstrap";
 import Registration from "./Registration/Registration";
 import CreateNewLot from "./CreateNewLot/CreateNewLot";
-import Statistics from "./Statistics/Statistics";
+// import Statistics from "./Statistics/Statistics";
 import ActiveLot from "./ActivLot/ActiveLot";
 
 
@@ -18,7 +18,7 @@ const LotMenuToggle = () => {
                 <h1>Меню</h1>
                 <hr/>
                 <Registration/>
-                <Statistics/>
+                {/*/!*<Statistics/>*!/ // TODO Статистика*/}
                 <CreateNewLot/>
                 <hr/>
                 <h2>Активные споры</h2>

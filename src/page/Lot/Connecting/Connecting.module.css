@@ -1,0 +1,9 @@
+.connecting {
+    position: relative;
+    top: 200px;
+    text-align: center;
+}
+
+.connecting h3 {
+    font-size: 35px;
+}

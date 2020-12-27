@@ -27,16 +27,19 @@ class Deviations extends Component {
         bottomAnchor: "",
         bottomUzer: "",
         bottomDate: "",
+        bottomComment: "",
         bottomDisabled: true,
         startTemplate: "",
         startAnchor: "",
         startUzer: "",
         startDate: "",
+        startComment: "",
         startDisabled: true,
         concreteTemplate: "",
         concreteAnchor: "",
         concreteUzer: "",
         concreteDate: "",
+        concreteComment: "",
         concreteDisabled: true
 
     }
@@ -187,6 +190,14 @@ class Deviations extends Component {
         this.saveBottomControl()
     }
 
+    handlerBottomComment = event => {
+        this.setState(
+            {
+                bottomComment: event.target.value
+            }
+        )
+    }
+
     handlerStartTemplate = event => {
         this.setState(
             {
@@ -221,6 +232,13 @@ class Deviations extends Component {
             }
         )
         this.saveStartControl()
+    }
+    handlerStartComment = event => {
+        this.setState(
+            {
+                startComment: event.target.value
+            }
+        )
     }
 
     handlerConcreteTemplate = event => {
@@ -260,7 +278,16 @@ class Deviations extends Component {
 
     }
 
-    // Отображает данные из stora в таблицу Корзина низ
+    handlerConcreteComment = event => {
+        this.setState(
+            {
+                concreteComment: event.target.value
+            }
+        )
+
+    }
+
+    // Отображает данные из store в таблицу
 
     showBottomSupporting = (nV, nObj) => {
         const namberVeu = ["nV" + (nV + 1)]
@@ -297,6 +324,13 @@ class Deviations extends Component {
 
         }
     }
+    showBottomComment = (nV, nObj) => {
+        const namberVeu = ["nV" + (nV + 1)]
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].comment)
+
+        }
+    }
     showStartTemplate = (nV, nObj) => {
         const namberVeu = ["sV" + (nV + 1)]
         if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
@@ -322,6 +356,13 @@ class Deviations extends Component {
         const namberVeu = ["sV" + (nV + 1)]
         if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
             return (this.props.veu.veu[nObj][namberVeu].date)
+
+        }
+    }
+    showStartComment = (nV, nObj) => {
+        const namberVeu = ["sV" + (nV + 1)]
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].comment)
 
         }
     }
@@ -351,6 +392,13 @@ class Deviations extends Component {
         const namberVeu = ["finV" + (nV + 1)]
         if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
             return (this.props.veu.veu[nObj][namberVeu].date)
+
+        }
+    }
+    showConcreteComment = (nV, nObj) => {
+        const namberVeu = ["finV" + (nV + 1)]
+        if (this.props.veu.veu[nObj][namberVeu] !== undefined) {
+            return (this.props.veu.veu[nObj][namberVeu].comment)
 
         }
     }
@@ -440,12 +488,22 @@ class Deviations extends Component {
                         </strong>
                     </p>
                 </div>
+                <div className={classes.comment}>
+                    <p>
+                        Коментарии:
+                        <strong>
+                            {this.showBottomComment(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
+                </div>
                 <div className={this.state.cls1}>
-                    <input onChange={this.handlerBottomSupporting} placeholder="Опорный фланец" />
-                    <input onChange={this.handlerBottomTemplate} placeholder="Шабл. фланец" />
-                    <input onChange={this.handlerBottomAnchor} placeholder="Анкер" />
-                    <input onChange={this.handlerBottomUzer} placeholder="Исполнитель" />
-                    <input onChange={this.handlerBottomDate} placeholder="Дата" />
+                    <input onChange={this.handlerBottomSupporting} placeholder="Опорный фланец"/>
+                    <input onChange={this.handlerBottomTemplate} placeholder="Шабл. фланец"/>
+                    <input onChange={this.handlerBottomAnchor} placeholder="Анкер"/>
+                    <input onChange={this.handlerBottomUzer} placeholder="Исполнитель"/>
+                    <input onChange={this.handlerBottomDate} placeholder="Дата"/>
+                    <textarea onChange={this.handlerBottomComment}
+                              placeholder="Коментарии: (не обязательно к заполнению)"/>
                 </div>
 
                 <button
@@ -525,12 +583,23 @@ class Deviations extends Component {
                         </strong>
                     </p>
                 </div>
+                <div className={classes.comment}>
+                    <p>
+                        Коментарии:
+                        <strong>
+                            {this.showStartComment(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
+                </div>
 
                 <div className={this.state.cls2}>
-                    <input onChange={this.handlerStartTemplate} placeholder="Шабл. фланец" />
-                    <input onChange={this.handlerStartAnchor} placeholder="Анкер" />
-                    <input onChange={this.handlerStartUzer} placeholder="Исполнитель" />
-                    <input onChange={this.handlerStartDate} placeholder="Дата" />
+                    <input onChange={this.handlerStartTemplate} placeholder="Шабл. фланец"/>
+                    <input onChange={this.handlerStartAnchor} placeholder="Анкер"/>
+                    <input onChange={this.handlerStartUzer} placeholder="Исполнитель"/>
+                    <input onChange={this.handlerStartDate} placeholder="Дата"/>
+                    <textarea
+                        onChange={this.handlerStartComment} placeholder="Коментарии: (не обязательно к заполнению)"
+                    />
                 </div>
                 <button
                     className={this.state.btnSave2}
@@ -608,11 +677,23 @@ class Deviations extends Component {
                         </strong>
                     </p>
                 </div>
+                <div className={classes.comment}>
+                    <p>
+                        Коментарии:
+                        <strong>
+                            {this.showConcreteComment(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
+                        </strong>
+                    </p>
+                </div>
                 <div className={this.state.cls3}>
-                    <input onChange={this.handlerConcreteTemplate} placeholder="Шабл. фланец" />
-                    <input onChange={this.handlerConcreteAnchor} placeholder="Анкер" />
-                    <input onChange={this.handlerConcreteUzer} placeholder="Исполнитель" />
-                    <input onChange={this.handlerConcreteDate} placeholder="Дата" />
+                    <input onChange={this.handlerConcreteTemplate} placeholder="Шабл. фланец"/>
+                    <input onChange={this.handlerConcreteAnchor} placeholder="Анкер"/>
+                    <input onChange={this.handlerConcreteUzer} placeholder="Исполнитель"/>
+                    <input onChange={this.handlerConcreteDate} placeholder="Дата"/>
+                    <textarea
+                        onChange={this.handlerConcreteComment}
+                        placeholder="Коментарии: (не обязательно к заполнению)"
+                    />
                 </div>
                 <button
                     className={this.state.btnSave3}
@@ -677,9 +758,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        saveToStoreBottom: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_BOTTOM, activ, infoVeu }),
-        saveToStoreStart: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_START, activ, infoVeu }),
-        saveToStoreConcrete: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_CONCRETE, activ, infoVeu }),
+        saveToStoreBottom: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_BOTTOM, activ: activ, infoVeu }),
+        saveToStoreStart: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_START, activ: activ, infoVeu }),
+        saveToStoreConcrete: (activ, infoVeu) => dispatch({ type: SAVE_TO_STORE_CONCRETE, activ: activ, infoVeu }),
         saveToBase: (activ, save, item, offline) => dispatch(saveToBase(activ, save, item, offline))
 
     }

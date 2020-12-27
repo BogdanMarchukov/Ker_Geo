@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 import Axios from "axios";
 
 
+
 const MenuContext = React.createContext()
 
 export const useMenu = () => {
@@ -18,6 +19,10 @@ export const MenuProvider = ({children}) => {
     const [loginName, setLoginName] = useState('') // данные из input Login
     const [loginPassword, setLoginPassword] = useState('') // данные из input Login
     const [LoginLoading, setLoginLoading] = useState('Вход') // Загрузка данных
+    const [disabledSearch, setDisabledSearch] = useState(true) // disabled кнопки поиск
+
+
+
 
 
     // функция открытия/закрытия меню-жребий
@@ -63,6 +68,7 @@ export const MenuProvider = ({children}) => {
                 if (response.data[key].name === loginName && response.data[key].password === loginPassword) {
                     localStorage.setItem('user', key)
                     setLoginLoading('Вход')
+                    setDisabledSearch(false)
                     openLogin()
                     return true
                 }else setLoginLoading('неверный пароль')
@@ -81,6 +87,7 @@ export const MenuProvider = ({children}) => {
         }
         toggle()
         setRegistration(prevState => !prevState)
+
     }
 
 
@@ -106,6 +113,7 @@ export const MenuProvider = ({children}) => {
                 const response = await Axios.post('https://geo-ker.firebaseio.com/lot/user.json', user)
                 localStorage.setItem('user', response.data.name)
                 setActiveUser(name)
+                setDisabledSearch(false)
 
             } catch (e) {
                 console.log(e)
@@ -122,6 +130,7 @@ export const MenuProvider = ({children}) => {
             try {
                 const responsive = await Axios.get(`https://geo-ker.firebaseio.com/lot/user/${key}.json`)
                 setActiveUser(responsive.data.name)
+                setDisabledSearch(false)
             } catch (e) {
                 alert(e)
             }
@@ -149,7 +158,8 @@ export const MenuProvider = ({children}) => {
             loginNameInputHandler,
             loginPasswordInputHandler,
             LoginLoading,
-            loginCheck
+            loginCheck,
+            disabledSearch
 
         }}>
             {children}

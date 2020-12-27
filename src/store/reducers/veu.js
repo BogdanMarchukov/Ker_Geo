@@ -48,7 +48,8 @@ export default function veuReducer(state = initialState, action) {
                     shF: action.infoVeu.bottomTemplate,
                     anchor: action.infoVeu.bottomAnchor,
                     uzer: action.infoVeu.bottomUzer,
-                    date: action.infoVeu.bottomDate
+                    date: action.infoVeu.bottomDate,
+                    comment: action.infoVeu.bottomComment
                 }
             }
         case 'SAVE_TO_STORE_START':
@@ -58,7 +59,8 @@ export default function veuReducer(state = initialState, action) {
                     shF: action.infoVeu.startTemplate,
                     anchor: action.infoVeu.startAnchor,
                     uzer: action.infoVeu.startUzer,
-                    date: action.infoVeu.startDate
+                    date: action.infoVeu.startDate,
+                    comment: action.infoVeu.startComment
                 }
             }
         case 'SAVE_TO_STORE_CONCRETE':
@@ -68,7 +70,8 @@ export default function veuReducer(state = initialState, action) {
                     shF: action.infoVeu.concreteTemplate,
                     anchor: action.infoVeu.concreteAnchor,
                     uzer: action.infoVeu.concreteUzer,
-                    date: action.infoVeu.concreteDate
+                    date: action.infoVeu.concreteDate,
+                    comment: action.infoVeu.concreteComment
                 }
             }
         case 'SAVE_X_Y_H_TO_STORE':

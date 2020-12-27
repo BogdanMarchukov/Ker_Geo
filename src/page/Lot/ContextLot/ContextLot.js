@@ -9,7 +9,7 @@ export const useLot = () => useContext(LotContext)
 
 export const LotProvider = ({children}) => {
 
-    const [disabledButtonNewLot, setDisabledButtonNewLot] = useState(false) // disabled button newLot
+    const [disabledButtonNewLot, setDisabledButtonNewLot] = useState(true) // disabled button newLot
     const [itemsActiveLot, setItemsActiveLot] = useState([]) // список активных споров
     const [timer, setTimer] = useState(null) // таймер обратного отсчета
     const [fetchUsers, setFetchUsers] = useState([]) // список участников спора
@@ -19,8 +19,8 @@ export const LotProvider = ({children}) => {
     const [showResult, setShowResult] = useState(false) // показать итог жребия
     const [resultList, setResultList] = useState([]) // список/результат(все пользователи)
     const [winner, setWinner] = useState('') // победитель
-    const [waitingUsers, setWaitingUsers] = useState(false)
-    const [connecting, setConnecting] = useState(false)
+    const [waitingUsers, setWaitingUsers] = useState(false) // ожидание окончания жребьевки
+    const [connecting, setConnecting] = useState(false) // ожидание начала жребьёвки
 
 
     // сздание нового жребия
@@ -84,7 +84,8 @@ export const LotProvider = ({children}) => {
             const response = await Axios.get('https://geo-ker.firebaseio.com/lot/active.json')
             for (let key in response.data) {
                 if (response.data[key].action === true) {
-                    item.push(<li onClick={()=>transitionActiveLot(key)} key={key} className={'mt-3'}>{response.data[key].activeUser}</li>)
+                    item.push(<li onClick={() => transitionActiveLot(key)} key={key}
+                                  className={'mt-3'}>{response.data[key].activeUser}</li>)
                 }
 
             }
@@ -94,9 +95,51 @@ export const LotProvider = ({children}) => {
         }
     }
 
-    // переход по ссылки Активные споры
-    const transitionActiveLot = (key) => {
+    // переход по ссылки Активные споры / загрузка списка участников
+    const transitionActiveLot = async (key) => {
+
+        const user = localStorage.getItem('user')
         toggle()
+        try {
+            const response = await Axios.get(`https://geo-ker.firebaseio.com/lot/active/${key}.json`)
+            if (response.data.action === true) {
+                await Axios.patch(
+                    `https://geo-ker.firebaseio.com/lot/active/${key}/users.json`, {[user]: activeUser})
+                localStorage.setItem('activeLot', key)
+                setConnecting(true)
+            }
+        } catch (e) {
+            console.error(e)
+        }
+
+    }
+    useEffect(() => {
+        finishConnecting(localStorage.getItem('activeLot'))
+    }, [connecting])
+
+    // ожидание начала жребия
+    const finishConnecting = async (key) => {
+        let item = []
+        const itemDelete = localStorage.getItem('activeLot')
+        try {
+            const response = await Axios.get(`https://geo-ker.firebaseio.com/lot/active/${key}.json`)
+            if (response.data.action === true && connecting === true) {
+                setTimeout(() => finishConnecting(key), 1000)
+            }
+            if (response.data.action === false && connecting === true) {
+                setConnecting(false)
+                setShowProcessing(true)
+                const response = await Axios.get(
+                    `https://geo-ker.firebaseio.com/lot/active/${itemDelete}/users.json`)
+                for (let key in response.data) {
+                    item.push(<li key={key}>{response.data[key]}</li>)
+                }
+                setFetchUsers(item)
+
+            }
+        } catch (e) {
+            console.error(e)
+        }
     }
 
 
@@ -125,7 +168,9 @@ export const LotProvider = ({children}) => {
     }
     useEffect(() => {
         if (fetchUsers.length === resultList.length && resultList.length !== 0) {
-            deleteActiveLot()
+            setTimeout(()=>{
+                deleteActiveLot()
+            }, 5000)
             setShowResult(true)
             setWaitingUsers(false)
         } else if (fetchUsers.length !== resultList.length) {
@@ -146,6 +191,8 @@ export const LotProvider = ({children}) => {
             try {
                 await Axios.delete(`https://geo-ker.firebaseio.com/lot/active/${deleteItem}.json`)
                 localStorage.removeItem('activeLot')
+                setChance(3)
+                setUserNumber(0)
             } catch (e) {
                 console.error(e)
             }
@@ -197,6 +244,19 @@ export const LotProvider = ({children}) => {
         } else return false
     }
 
+    // завершение программы
+    const endLot = () => {
+        setShowResult(false)
+        setDisabledButtonNewLot(false)
+    }
+
+    useEffect(() => {
+        if (activeUser !== 'Вход не выполнен') {
+            setDisabledButtonNewLot(false)
+        }
+
+    },[activeUser])
+
 
     return (
         <LotContext.Provider value={{
@@ -215,7 +275,10 @@ export const LotProvider = ({children}) => {
             saveRezolve,
             resultList,
             winner,
-            waitingUsers
+            waitingUsers,
+            connecting,
+            endLot,
+            setDisabledButtonNewLot
         }}
 
         >

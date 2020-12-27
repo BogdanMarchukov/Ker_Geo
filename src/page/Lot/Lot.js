@@ -11,6 +11,7 @@ import Timer from "./Timer/Timer";
 import LotProcessing from "./LotProcessing/LotProcessing";
 import ResultLot from "./ResultLot/ResultLot";
 import WaitingForUsers from "./WaitingForUsers/WaitingForUsers";
+import Connecting from "./Connecting/Connecting";
 
 
 const Lot = () => {
@@ -29,6 +30,7 @@ const Lot = () => {
                     <LotProcessing/>
                     <ResultLot/>
                     <WaitingForUsers/>
+                    <Connecting/>
                 </LotProvider>
             </MenuProvider>
         </div>

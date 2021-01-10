@@ -490,7 +490,7 @@ class Deviations extends Component {
                 </div>
                 <div className={classes.comment}>
                     <p>
-                        Коментарии:
+                        Комментарии:
                         <strong>
                             {this.showBottomComment(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                         </strong>
@@ -503,7 +503,7 @@ class Deviations extends Component {
                     <input onChange={this.handlerBottomUzer} placeholder="Исполнитель"/>
                     <input onChange={this.handlerBottomDate} placeholder="Дата"/>
                     <textarea onChange={this.handlerBottomComment}
-                              placeholder="Коментарии: (не обязательно к заполнению)"/>
+                              placeholder="Комментарии: (не обязательно к заполнению)"/>
                 </div>
 
                 <button
@@ -585,7 +585,7 @@ class Deviations extends Component {
                 </div>
                 <div className={classes.comment}>
                     <p>
-                        Коментарии:
+                        Комментарии:
                         <strong>
                             {this.showStartComment(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                         </strong>
@@ -598,7 +598,7 @@ class Deviations extends Component {
                     <input onChange={this.handlerStartUzer} placeholder="Исполнитель"/>
                     <input onChange={this.handlerStartDate} placeholder="Дата"/>
                     <textarea
-                        onChange={this.handlerStartComment} placeholder="Коментарии: (не обязательно к заполнению)"
+                        onChange={this.handlerStartComment} placeholder="Комментарии: (не обязательно к заполнению)"
                     />
                 </div>
                 <button
@@ -679,7 +679,7 @@ class Deviations extends Component {
                 </div>
                 <div className={classes.comment}>
                     <p>
-                        Коментарии:
+                        Комментарии:
                         <strong>
                             {this.showConcreteComment(this.props.activ.activIndexVeu, this.props.activ.activIndex)}
                         </strong>
@@ -692,7 +692,7 @@ class Deviations extends Component {
                     <input onChange={this.handlerConcreteDate} placeholder="Дата"/>
                     <textarea
                         onChange={this.handlerConcreteComment}
-                        placeholder="Коментарии: (не обязательно к заполнению)"
+                        placeholder="Комментарии: (не обязательно к заполнению)"
                     />
                 </div>
                 <button

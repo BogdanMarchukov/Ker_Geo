@@ -4,7 +4,8 @@ const initialState = {
     veu: [
 
     ],
-    loading: false
+    loading: false,
+    filedList: {}
 }
 
 
@@ -15,21 +16,24 @@ export default function veuReducer(state = initialState, action) {
 
             return {
                 veu: state.veu,
-                loading: true
+                loading: true,
+                filedList: state.filedList
             }
 
         case 'FINISH_INIT_TO_STORE':
 
             return {
                 veu: action.veuBase,
-                loading: false
+                loading: false,
+                filedList: action.filedList
 
             }
         case 'START_CREATE_NEW_OBJECT':
 
             return {
                 veu: state.veu,
-                loading: true
+                loading: true,
+                filedList: state.filedList
 
             }
 
@@ -38,7 +42,8 @@ export default function veuReducer(state = initialState, action) {
             return {
 
                 veu: [...state.veu, action.info],
-                loading: false
+                loading: false,
+                filedList: state.filedList
             }
         case 'SAVE_TO_STORE_BOTTOM':
             return {
@@ -50,7 +55,8 @@ export default function veuReducer(state = initialState, action) {
                     uzer: action.infoVeu.bottomUzer,
                     date: action.infoVeu.bottomDate,
                     comment: action.infoVeu.bottomComment
-                }
+                },
+                filedList: state.filedList
             }
         case 'SAVE_TO_STORE_START':
             return {
@@ -61,7 +67,8 @@ export default function veuReducer(state = initialState, action) {
                     uzer: action.infoVeu.startUzer,
                     date: action.infoVeu.startDate,
                     comment: action.infoVeu.startComment
-                }
+                },
+                filedList: state.filedList
             }
         case 'SAVE_TO_STORE_CONCRETE':
             return {
@@ -72,7 +79,8 @@ export default function veuReducer(state = initialState, action) {
                     uzer: action.infoVeu.concreteUzer,
                     date: action.infoVeu.concreteDate,
                     comment: action.infoVeu.concreteComment
-                }
+                },
+                filedList: state.filedList
             }
         case 'SAVE_X_Y_H_TO_STORE':
             return {
@@ -81,7 +89,8 @@ export default function veuReducer(state = initialState, action) {
                     x: action.info.x,
                     y: action.info.y,
                     h: action.info.h
-                }
+                },
+                filedList: state.filedList
             }
 
         default:

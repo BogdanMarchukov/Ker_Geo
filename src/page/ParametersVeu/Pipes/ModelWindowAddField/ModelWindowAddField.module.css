@@ -1,0 +1,33 @@
+.ModelWindowAddField {
+    background: white;
+    position: relative;
+    left: 18%;
+    width: 220px;
+    height: 150px;
+    border: solid 2px black;
+}
+
+.ModelWindowAddField h6 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.ModelWindowAddField input {
+    width: 150px;
+    margin: 2px 30px;
+    text-align: center;
+}
+
+.btn  {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn button {
+    margin: 5px 0;
+    font-size: 12px;
+    color: black;
+
+
+
+}

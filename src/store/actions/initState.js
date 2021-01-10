@@ -5,15 +5,25 @@ export function initState() {
 
     return async dispatch => {
         dispatch(startInit())
-       try {
+        try {
             const response = await Axios.get('https://geo-ker.firebaseio.com/veu.json')
-            const veuBase = []
-            const name = []
+            const responseFieldList = await Axios.get('https://geo-ker.firebaseio.com/options.json')
+            const filedList = {};
+            const veuBase = [];
+            const name = [];
             Object.keys(response.data).forEach((key) => {
                 veuBase.push(response.data[key])
                 name.push(key)
             })
-            dispatch(FinishInit(veuBase, name))
+            if (responseFieldList.data !== null) {
+                Object.keys(responseFieldList.data).forEach(key => {
+                    filedList[key] = responseFieldList.data[key]
+                })
+                dispatch(FinishInit(veuBase, name, filedList))
+            }
+            else
+
+            dispatch(FinishInit(veuBase, name, filedList))
         } catch (e) {
             console.log(e)
         }
@@ -26,11 +36,12 @@ export function startInit() {
     }
 }
 
-export function FinishInit(veuBase, key) {
+export function FinishInit(veuBase, key, filedList) {
     return {
         type: FINISH_INIT_TO_STORE,
         veuBase,
-        key
+        key,
+        filedList
     }
 }
 

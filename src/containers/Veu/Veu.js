@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import classes from './Veu.module.css'
 import ObjectButton from '../../components/objectButton/ObjectButton'
 import { connect } from 'react-redux'
-import CreateNewObject from '../../components/CreateNewObject/CreateNewObject'
 import { CALL_MODEL_WINDOW, KEY_BASE_TO_STORE, BTN_OBJECT_DISABLED_OF} from '../../store/actions/actionTypes'
 import Loader from '../../components/Loader/Loader'
 import{initState} from '../../store/actions/initState'
 import {Button} from "react-bootstrap";
 import OfflineInput from "../../components/OfflineInput/OfflineInput";
+import CreateNewObject from "../../components/createNewObject/createNewObject";
 
 
 

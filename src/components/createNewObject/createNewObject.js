@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import classes from './CreateNewObject.module.css'
+import classes from './createNewObject.module.css'
 import {  CLOSE_WINDOW } from '../../store/actions/actionTypes'
 import { addNewObject } from '../../store/actions/createNewObject'
 

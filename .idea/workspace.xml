@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8da0e910-1642-4896-89ae-458b1c785ab0" name="Default Changelist" comment="add Column comments">
-      <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/LotMenuToggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/LotMenuToggle.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +91,11 @@
       <workItem from="1610265501027" duration="18576000" />
       <workItem from="1610568134491" duration="388000" />
       <workItem from="1610568577993" duration="84000" />
+      <workItem from="1610620941288" duration="29000" />
+      <workItem from="1612210179431" duration="619000" />
+      <workItem from="1612210835512" duration="163000" />
+      <workItem from="1612245079136" duration="1386000" />
+      <workItem from="1612285768323" duration="3571000" />
     </task>
     <task id="LOCAL-00001" summary="Add password to LocalStorage">
       <created>1607448755627</created>
@@ -182,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609098580312</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="merge branches 13.01">
+      <created>1610570635658</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1610570635658</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +227,8 @@
     <MESSAGE value="23.12.2020" />
     <MESSAGE value="25.12.2020" />
     <MESSAGE value="add Column comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Column comments" />
+    <MESSAGE value="merge branches 13.01" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge branches 13.01" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

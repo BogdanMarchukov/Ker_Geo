@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8da0e910-1642-4896-89ae-458b1c785ab0" name="Default Changelist" comment="add Column comments">
+      <change afterPath="$PROJECT_DIR$/config/default.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/save.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/LotMenuToggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Lot/LotMenuToggle/LotMenuToggle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +100,7 @@
       <workItem from="1612210835512" duration="163000" />
       <workItem from="1612245079136" duration="1386000" />
       <workItem from="1612285768323" duration="3571000" />
+      <workItem from="1617033024284" duration="3811000" />
     </task>
     <task id="LOCAL-00001" summary="Add password to LocalStorage">
       <created>1607448755627</created>

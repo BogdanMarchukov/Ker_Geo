@@ -9,60 +9,42 @@ In the project directory, you can run:
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**Password: 1987**
 
-### `npm test`
+ [https://geo-ker.web.app](https://geo-ker.web.app/) production version, **no longer in use**
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Application Details
+## Language:
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript" width="40" />
 
-### `npm run build`
+## FrontEnd:
+- [React.js](https://ru.reactjs.org/)
+- [React-bootstrap](https://react-bootstrap.github.io)
+## BackEnd
+- no Server
+- Database - realm time [firebase](https://firebase.google.com/)
+- Hosting - [firebase](https://firebase.google.com/)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## NPM packages:
+- [AXIOS](https://github.com/axios/axios)
+- state manager [Redux](https://redux.js.org/)
+# User manual
+### Motivation
+Created for the department of surveying, in order to centralize data and exchange between employees.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Construction of wind turbines
+### Beginning of work
+login password: 1987
+### Main page
+- Select an object from existing ones or create a new one.
+- Offline option available (All application state is loaded only when you enter on the main page)
+- The application does not use the server, so all data must be entered manually
+### Dispute menu (experimental option)
+- All users go to this menu
+- Simple registration without confirmation
+- One user creates a dispute
+- Other users join
+- The dispute starts
+- There are three attempts to throw a random number from **1 to 100**, it is not necessary to use all attempts
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
